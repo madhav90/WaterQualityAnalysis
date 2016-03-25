@@ -15,4 +15,4 @@ def index(request):
     #print(result.description)
     cluster.shutdown()
     #return HttpResponse(result.p_type)
-    return render(request, 'example/index.html', {'results':results})
+    return render(request, 'analysis/index.html', {'results':results})
