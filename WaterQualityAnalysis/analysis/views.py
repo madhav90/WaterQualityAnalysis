@@ -16,3 +16,15 @@ def index(request):
     cluster.shutdown()
     #return HttpResponse(result.p_type)
     return render(request, 'analysis/index.html', {'results':results})
+
+import csv
+import urllib2
+
+def collectDataSensor(request):
+    req = urllib2.Request('http://pdx.axiomalaska.com/stationsensorservice/getExcelSheet?stationid=20364&sensorid=41&version=2&units=89;microg.L-1&start_time=1384477860&end_time=1458936300')
+    response = urllib2.urlopen(req)
+    cr = csv.reader(response)
+    for row in cr:
+        print row
+
+
