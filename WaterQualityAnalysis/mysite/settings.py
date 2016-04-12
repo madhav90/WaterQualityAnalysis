@@ -78,18 +78,13 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-    'ENGINE': 'django_cassandra_engine',
-    'NAME': 'db2',
-    'TEST_NAME': 'test_db2',
-    'HOST': '127.0.0.1',
-    'PORT': '9042',
-    'OPTIONS': {
-        'replication': {
-            'strategy_class': 'SimpleStrategy',
-            'replication_factor': 1
-        }
-    }
+        'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'waterQuality',
+        'USER': 'root',
+        'PASSWORD': 'root',
+        'HOST': '/Applications/XAMPP/xamppfiles/var/mysql/mysql.sock',   # Or an IP Address that your DB is hosted on
+        'PORT': '3306',
     }
 }
 
@@ -109,5 +104,8 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
-
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
 STATIC_URL = '/static/'
+

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Water Quality Analysis</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+    <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+    <script src="/static/map.js"></script>
+     <link rel="stylesheet" href='static/style.css'>
+</head>
+<style>
+     .info {
+    padding: 6px 8px;
+    font: 14px/16px Arial, Helvetica, sans-serif;
+    background: white;
+    background: rgba(255,255,255,0.8);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 5px;
+}
+.info h4 {
+    margin: 0 0 5px;
+    color: #777;
+}
+    .legend {
+    line-height: 18px;
+    color: #555;
+}
+.legend i {
+    width: 18px;
+    height: 18px;
+    float: left;
+    margin-right: 8px;
+    opacity: 0.7;
+}
+</style>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Water Quality Analysis</a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+            <li ><a href="#">Home</a></li>
+            <li><a href="">Quality trends</a></li>
+            <li class="active"><a href="analysis">Analysis</a></li>
+            <li><a href="#">Our Own Index</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="page-header">
+
+</div>
+<div class="container">
+    <h1>Water Quality Index</h1>
+<div id="map"  style="width:100%;height: 600px;">
+</div>
+    </div>
+<script>
+// -- Initialize map(dark property)
+var mapboxAccessToken = "pk.eyJ1IjoiZG9sbHlndXB0YSIsImEiOiJjaW13Z21paG0wMzY0d2JsdTNvZWpxNmVuIn0.yOZTAE65CgxzaZ6PZw9bRA";
+var map = L.map('map').setView([37.829306, -122.071835], 9);
+
+L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=' + mapboxAccessToken, {
+    id: 'mapbox.dark'
+}).addTo(map);
+
+
+//-- Get color on the basis of water Quality
+function getColor(d) {
+    return d > 90 ? '#081d58' :
+           d > 80 ? '#253494' :
+           d > 70  ? '#225ea8' :
+           d > 60  ? '#1d91c0' :
+           d > 50  ? '#41b6c4' :
+           d > 40   ? '#7fcdbb' :
+           d > 30   ? '#c7e9b4' :
+           d > 20   ? '#edf8b1' :
+                      '#ffffd9';
+}
+
+function style(feature) {
+    return {
+        fillColor: getColor(feature.properties.wqi),
+        weight: 2,
+        opacity: 1,
+        color: 'white',
+        dashArray: '3',
+        fillOpacity: 0.7
+    };
+}
+var geojson;
+
+// --- Hover Listeners
+function highlightFeature(e) {
+    var layer = e.target;
+
+    layer.setStyle({
+        weight: 5,
+        color: '#666',
+        dashArray: '',
+        fillOpacity: 0.7
+    });
+
+    if (!L.Browser.ie && !L.Browser.opera) {
+        layer.bringToFront();
+    }
+    info.update(layer.feature.properties);
+}
+function resetHighlight(e) {
+    geojson.resetStyle(e.target);
+    info.update();
+}
+function zoomToFeature(e) {
+    map.fitBounds(e.target.getBounds());
+}
+function onEachFeature(feature, layer) {
+    layer.on({
+        mouseover: highlightFeature,
+        mouseout: resetHighlight,
+        click: zoomToFeature
+    });
+}
+// -- get boxes, colors and hover features on map
+geojson=L.geoJson(data,{style: style, onEachFeature: onEachFeature}).addTo(map);
+
+//------ info window
+
+var info = L.control();
+
+info.onAdd = function (map) {
+    this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
+    this.update();
+    return this._div;
+};
+
+// method to update the control based on feature properties passed
+info.update = function (props) {
+    this._div.innerHTML = '<h4>Water Quality</h4>' +  (props ?
+        '<b> Station Number:' + props.station + '</b><br /><b>Quality Value:' + props.wqi
+        : 'Hover over a region');
+};
+
+info.addTo(map);
+
+//---- Legends
+var legend = L.control({position: 'bottomright'});
+
+legend.onAdd = function (map) {
+
+    var div = L.DomUtil.create('div', 'info legend'),
+        grades = [0, 20, 30, 40, 50, 60, 70, 80, 90],
+        labels = [];
+
+    // loop through our density intervals and generate a label with a colored square for each interval
+    for (var i = 0; i < grades.length; i++) {
+        div.innerHTML +=
+            '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' +
+            grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
+    }
+
+    return div;
+};
+
+legend.addTo(map);
+
+</script>
+
+</body>
+</html>
