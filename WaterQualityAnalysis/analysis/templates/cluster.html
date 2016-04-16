@@ -45,9 +45,10 @@
             <a class="navbar-brand" href="#">Water Quality Analysis</a>
         </div>
         <ul class="nav navbar-nav navbar-right">
-            <li ><a href="#">Home</a></li>
+            <li ><a href="/">Home</a></li>
             <li><a href="">Quality trends</a></li>
-            <li class="active"><a href="analysis">Analysis</a></li>
+            <li><a href="analysis">Analysis</a></li>
+            <li class="active"><a href="cluster">Cluster</a></li>
             <li><a href="#">Our Own Index</a></li>
         </ul>
     </div>
@@ -57,13 +58,13 @@
 </div>
 <div class="container">
     <h1>Water Quality Index</h1>
-<div id="map"  style="width:100%;height: 600px;">
+<div id="map"  style="width:100%;height: 700px;">
 </div>
     </div>
 <script>
 // -- Initialize map(dark property)
 var mapboxAccessToken = "pk.eyJ1IjoiZG9sbHlndXB0YSIsImEiOiJjaW13Z21paG0wMzY0d2JsdTNvZWpxNmVuIn0.yOZTAE65CgxzaZ6PZw9bRA";
-var map = L.map('map').setView([37.829306, -122.071835], 9);
+var map = L.map('map').setView([37.829306, -122.071835], 10);
 
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=' + mapboxAccessToken, {
     id: 'mapbox.dark'
@@ -72,14 +73,10 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token='
 
 //-- Get color on the basis of water Quality
 function getColor(d) {
-    return d > 90 ? '#081d58' :
-           d > 80 ? '#253494' :
-           d > 70  ? '#225ea8' :
-           d > 60  ? '#1d91c0' :
-           d > 50  ? '#41b6c4' :
-           d > 40   ? '#7fcdbb' :
-           d > 30   ? '#c7e9b4' :
-           d > 20   ? '#edf8b1' :
+    return d > 95 ? '#081d58' :
+           d > 80  ? '#225ea8' :
+           d > 65  ? '#41b6c4' :
+           d > 44   ? '#7fcdbb' :
                       '#ffffd9';
 }
 
@@ -153,7 +150,7 @@ var legend = L.control({position: 'bottomright'});
 legend.onAdd = function (map) {
 
     var div = L.DomUtil.create('div', 'info legend'),
-        grades = [0, 20, 30, 40, 50, 60, 70, 80, 90],
+        grades = [0, 45, 65, 80, 95],
         labels = [];
 
     // loop through our density intervals and generate a label with a colored square for each interval
