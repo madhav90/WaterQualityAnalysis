@@ -1,8 +1,8 @@
 <?php
     $username = "root";
-    $password = "";
+    $password = "root";
     $host = "localhost";
-    $database="sensor_data";
+    $database="waterquality";
 
     $connect = mysqli_connect($host, $username, $password, $database);
 
@@ -14,7 +14,7 @@ if (!$connect) {
 }
 
     $myquery = "
-SELECT `id`, `stationname`, `latitude`, `longitude`, `sensorslist` FROM `stationlist`
+SELECT `date`, `value` FROM `carquinezchlorophyll`
 ";
     $query = mysqli_query($connect, $myquery);
 

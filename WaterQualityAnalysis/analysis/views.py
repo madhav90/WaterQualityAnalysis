@@ -11,11 +11,15 @@ def index(request):
     return render(request, 'index.html', {})
 
 def cluster(request):
-    return render(request, 'cluster.html')
+    qualitydata = calculateCCMEwqi()
+    return render(request, 'cluster.html',{'yearData': json.dumps(qualitydata)})
 
 def ccme(request):
     qualitydata = calculateCCMEwqi()
     return render(request, 'ccmeAnalysis.html',{'data': json.dumps(qualitydata)})
+
+def qualityTrends(request):
+    return render(request, 'madhav/index.html',{})
 
 def calculateCCMEwqi():
     db = connection

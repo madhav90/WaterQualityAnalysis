@@ -24,23 +24,23 @@ for i in "${filenames[@]}"
 do
 # echo $filenames
 
-echo "CREATE TABLE IF NOT EXISTS $i ( date VARCHAR(10) NOT NULL, value FLOAT);" | mysql -u root mydata;
+echo "CREATE TABLE IF NOT EXISTS $i ( date VARCHAR(10) NOT NULL, value FLOAT);" | mysql -u root -proot waterquality;
 
 # done
 
 # for j in "${noextension[@]}"
 # do
 
-echo "TRUNCATE TABLE $i;" | mysql -u root mydata;
+echo "TRUNCATE TABLE $i;" | mysql -u root -proot waterquality;
 
-echo "CREATE INDEX $i ON $i (date,value);" | mysql -u root mydata;
+echo "CREATE INDEX $i ON $i (date,value);" | mysql -u root -proot waterquality;
 
 IFS=,
 while read 'date' 'value'
       do
         echo "INSERT INTO $i (date,value) VALUES ('$date', '$value');"
 
-done < $i.csv | mysql -u root mydata;
+done < $i.csv | mysql -u root -proot waterquality;
 
 # unset IFS
 

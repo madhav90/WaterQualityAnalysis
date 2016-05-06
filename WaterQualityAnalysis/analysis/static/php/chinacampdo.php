@@ -1,8 +1,8 @@
 <?php
     $username = "root";
-    $password = "";
+    $password = "root";
     $host = "localhost";
-    $database="mydata";
+    $database="waterquality";
 
     $connect = mysqli_connect($host, $username, $password, $database);
 

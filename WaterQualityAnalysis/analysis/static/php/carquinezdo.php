@@ -1,8 +1,8 @@
 <?php
     $username = "root";
-    $password = "";
+    $password = "root";
     $host = "localhost";
-    $database="mydata";
+    $database="waterquality";
 
     $connect = mysqli_connect($host, $username, $password, $database);
 
@@ -14,7 +14,7 @@ if (!$connect) {
 }
 
     $myquery = "
-SELECT `date`, `value` FROM `carquineztemp`
+SELECT `date`, `value` FROM `carquinezdo`
 ";
     $query = mysqli_query($connect, $myquery);
 

@@ -12,6 +12,13 @@
 
 
 </head>
+<style>
+    .custom .leaflet-popup-tip,
+.custom .leaflet-popup-content-wrapper {
+    background: grey;
+    color: #ffffff;
+}
+</style>
 <body>
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
@@ -43,6 +50,13 @@
     </div>
 </div>
 <script>
+function getColor(d) {
+    return d > 95 ? '#081d58' :
+           d > 80  ? '#225ea8' :
+           d > 65  ? '#41b6c4' :
+           d > 44   ? 'green' :
+                      'red';
+}
 var selectedYear = $('#year').val();
 console.log(selectedYear);
 // -- Initialize map(dark property)
@@ -58,13 +72,14 @@ var markerLayer;
 
 for(i=0;i<data.length;i++){
 if(data[i].year==selectedYear){
-   var circle = L.circle([data[i].lat,data[i].long], data[i].ccmeWQI*10, {
-    color: 'red',
-    fillColor: '#f03',
+   var circle = L.circle([data[i].lat,data[i].long], 1200, {
+    color: getColor(data[i].ccmeWQI),
+    fillColor: getColor(data[i].ccmeWQI),
     fillOpacity: 0.5
 });
-var popup = data[i].ccmeWQI.toString();
-circle.bindPopup(popup);
+var popup = "Water Quality<br/> "+ data[i].ccmeWQI.toString() + '<br/>Station No: '+ data[i].station.toString();
+var popOptions={'maxWidth':'100', 'className':'custom'}
+circle.bindPopup(popup,popOptions);
 markers.push(circle);
 }
 }
@@ -79,13 +94,14 @@ markers=[];
 console.log(markers.length);
 for(i=0;i<data.length;i++){
 if(data[i].year==selectedYear){
-   var circle2 = L.circle([data[i].lat,data[i].long], data[i].ccmeWQI*10, {
-    color: 'red',
-    fillColor: '#f03',
+   var circle2 = L.circle([data[i].lat,data[i].long], 1200, {
+    color: getColor(data[i].ccmeWQI),
+    fillColor: getColor(data[i].ccmeWQI),
     fillOpacity: 0.5
 });
-var popup = data[i].ccmeWQI.toString() + "--" + data[i].year.toString() + "--" + data[i].paramNum.toString();
-circle2.bindPopup(popup);
+var popup = "Water Quality<br/> "+data[i].ccmeWQI.toString();
+var popOptions={'maxWidth':'100', 'className':'custom'}
+circle2.bindPopup(popup,popOptions);
 markers.push(circle2);
 }
 }

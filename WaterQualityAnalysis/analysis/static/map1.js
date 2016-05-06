@@ -12,7 +12,7 @@ L.tileLayer('http://{s}.tile.openstreetmap.se/hydda/roads_and_labels/{z}/{x}/{y}
 }).addTo(map);
 
 // load GeoJSON from an external file
-$.getJSON("php/stationlist.php", function (data) {
+$.getJSON("static/php/stationlist.php", function (data) {
     for (var i = 0; i < data.length; i++) {
         var location = new L.LatLng(data[i].latitude, data[i].longitude);
         var id = data[i].id;
