@@ -14,9 +14,8 @@ def cluster(request):
     qualitydata = calculateCCMEwqi()
     return render(request, 'cluster.html',{'yearData': json.dumps(qualitydata)})
 
-def ccme(request):
-    qualitydata = calculateCCMEwqi()
-    return render(request, 'ccmeAnalysis.html',{'data': json.dumps(qualitydata)})
+def spider(request):
+    return render(request, 'spider.html',{})
 
 def qualityTrends(request):
     db = connection

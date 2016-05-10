@@ -102,6 +102,9 @@ if(yearData[i].year==selectedYear){
 var popup = "Water Quality<br/> "+yearData[i].ccmeWQI.toString();
 var popOptions={'maxWidth':'100', 'className':'custom'}
 circle2.bindPopup(popup,popOptions);
+ circle2.on('mouseover', function (e) {
+            this.openPopup();
+        });
 markers.push(circle2);
 }
 }
@@ -109,6 +112,7 @@ markerLayer = L.layerGroup(markers);
 map.addLayer(markerLayer);
 
 }
+
 
 
 

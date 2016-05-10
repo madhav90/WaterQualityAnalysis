@@ -36,6 +36,10 @@
     float: left;
     margin-right: 8px;
     opacity: 0.7;
+    .custom .leaflet-popup-tip,
+.custom .leaflet-popup-content-wrapper {
+    background: grey;
+    color: #ffffff;
 }
 </style>
 <body>
@@ -46,10 +50,9 @@
         </div>
         <ul class="nav navbar-nav navbar-right">
             <li ><a href="/">Home</a></li>
-            <li><a href="">Quality trends</a></li>
-            <li><a href="analysis">Analysis</a></li>
-            <li class="active"><a href="cluster">Cluster</a></li>
-            <li><a href="#">Our Own Index</a></li>
+            <li><a href="qualityTrends">Data Portal</a></li>
+            <li class="active"><a href="analysis">Analysis</a></li>
+             <li><a href="spider">Parameter Analysis</a></li>
         </ul>
     </div>
 </nav>
@@ -58,7 +61,7 @@
 </div>
 <div class="container">
     <div class="row">
-    <h1>Water Quality Index</h1>
+    <h1>Analysis</h1>
     <select id="year" onchange="getResults()">
   <option value="2016">2016</option>
   <option value="2015">2015</option>
@@ -68,17 +71,27 @@
         <option value="2011">2011</option>
         <option value="2010">2010</option>
 </select>
+        <script>
+$(document).ready(function(){
+     $("#map2").hide();
+    $("#change").click(function(){
+        $("#map").toggle();
+        $("#map2").toggle();
+    });
+});
+</script>
+        <button id="change">Change View</button>
 <div id="map"  style="width:100%;height: 600px;">
 </div>
     </div>
     <div class="row">
-        <br><br><br>
-        <div id="map2"  style="width:100%;height: 600px;">
+        <div id="map2" style="width:100%;height: 600px;">
     </div>
     </div>
     </div>
 <script>
 // -- Initialize map(dark property)
+var popup;
 var selectedYear = $('#year').val();
 var mapboxAccessToken = "pk.eyJ1IjoiZG9sbHlndXB0YSIsImEiOiJjaW13Z21paG0wMzY0d2JsdTNvZWpxNmVuIn0.yOZTAE65CgxzaZ6PZw9bRA";
 var map = L.map('map').setView([37.829306, -122.071835], 10);
@@ -204,11 +217,7 @@ legend.onAdd = function (map) {
 
 legend.addTo(map);
 
-function getResults(){
-selectedYear = $('#year').val();
-console.log("year"+selectedYear);
-geojson=L.geoJson(data,{style: style, onEachFeature: onEachFeature}).addTo(map);
-}
+
 
 </script>
 
@@ -225,14 +234,17 @@ var markerLayer;
 
 for(i=0;i<yearData.length;i++){
 if(yearData[i].year==selectedYear){
-   var circle = L.circle([yearData[i].lat,yearData[i].long], 1200, {
-    color: getColor(yearData[i].ccmeWQI),
-    fillColor: getColor(yearData[i].ccmeWQI),
+   var circle = L.circle([yearData[i].lat,yearData[i].long], yearData[i].ccmeWQI*10, {
+    color: 'red',
+    fillColor: 'red',
     fillOpacity: 0.5
 });
 var popup = "Water Quality<br/> "+ yearData[i].ccmeWQI.toString() + '<br/>Station No: '+ yearData[i].station.toString();
 var popOptions={'maxWidth':'100', 'className':'custom'}
 circle.bindPopup(popup,popOptions);
+circle.on('mouseover', function (e) {
+            this.openPopup();
+        });
 markers.push(circle);
 }
 }
@@ -247,19 +259,25 @@ markers=[];
 console.log(markers.length);
 for(i=0;i<yearData.length;i++){
 if(yearData[i].year==selectedYear){
-   var circle2 = L.circle([yearData[i].lat,yearData[i].long], 1200, {
-    color: getColor(yearData[i].ccmeWQI),
-    fillColor: getColor(yearData[i].ccmeWQI),
+   var circle2 = L.circle([yearData[i].lat,yearData[i].long], yearData[i].ccmeWQI*10, {
+    color: 'red',
+    fillColor: 'red',
     fillOpacity: 0.5
 });
 var popup = "Water Quality<br/> "+yearData[i].ccmeWQI.toString();
 var popOptions={'maxWidth':'100', 'className':'custom'}
 circle2.bindPopup(popup,popOptions);
+circle2.on('mouseover', function (e) {
+            this.openPopup();
+        });
 markers.push(circle2);
 }
 }
 markerLayer = L.layerGroup(markers);
 map2.addLayer(markerLayer);
+selectedYear = $('#year').val();
+console.log("year"+selectedYear);
+geojson=L.geoJson(data,{style: style, onEachFeature: onEachFeature}).addTo(map);
 
 }
 </script>

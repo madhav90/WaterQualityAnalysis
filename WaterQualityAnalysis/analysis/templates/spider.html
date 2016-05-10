@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Dissolved Oxygen</title>
+
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<style type="text/css">
+${demo.css}
+		</style>
+		<script type="text/javascript">
+$(function () {
+
+    $('#container').highcharts({
+
+        chart: {
+            polar: true,
+            type: 'line'
+        },
+
+        title: {
+            text: 'The Dissolved Oxygen normal range is between 50 to 70%',
+            x: -70
+        },
+
+        pane: {
+            size: '80%'
+        },
+
+        xAxis: {
+            categories: ['Station 1', 'Station 2', 'Station 4',
+                    'Station 5', 'Station 6', 'Station 7', 'Station 8'],
+            tickmarkPlacement: 'on',
+            lineWidth: 0
+        },
+
+        yAxis: {
+				
+           gridLineInterpolation: 'polygon',
+            lineWidth: 0,
+            min: 0
+        },
+
+        tooltip: {
+            shared: true,
+            pointFormat: '<span style="color:{series.color}">{series.name}: <b>{point.y:,.0f}%</b><br/>'
+        },
+
+        legend: {
+            align: 'right',
+            verticalAlign: 'top',
+            y: 70,
+            layout: 'vertical'
+        },
+
+        series: [{
+            name: '2011',
+            data: [50, 55, 56, 60, 66, 58, 68],
+            pointPlacement: 'on'
+        },{
+            name: '2012',
+            data: [55, 58, 67, 70, 56, 50, 66],
+            pointPlacement: 'on'
+        },{
+            name: '2013',
+            data: [54, 55, 53, 60, 50, 50, 60],
+            pointPlacement: 'on'
+        },  {
+            name: '2014',
+            data: [45, 40, 45, 35, 40, 55, 59],
+            pointPlacement: 'on'
+        }, {
+            name: '2015',
+            data: [40, 39, 42, 60, 55, 70, 80],
+            pointPlacement: 'on'
+        }]
+
+    });
+});
+		</script>
+	</head>
+	<body>
+ <script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+ <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Water Quality Analysis</a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="/">Home</a></li>
+            <li><a href="qualityTrends">Data Portal</a></li>
+            <li><a href="analysis">Historical Analysis</a></li>
+            <li class="active"><a href="spider">Parameter Analysis</a></li>
+        </ul>
+    </div>
+</nav>
+<br><br><br><br>
+<div id="container" style="min-width: 400px; max-width: 700px; height: 600px; margin: 0 auto"></div>
+
+	</body>
+</html>
