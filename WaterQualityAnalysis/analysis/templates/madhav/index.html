@@ -117,20 +117,21 @@ L.tileLayer('http://{s}.tile.openstreetmap.se/hydda/roads_and_labels/{z}/{x}/{y}
 
         };
     }
-    function getData(stationName,callback)
+    function getData(stationName)
     {
     var stationData;
     alert("in getData");
 	//make db connection
 	$.ajax({
 		url : 'getSensorData',
+		async: false,
 		type : 'GET',
 		data :{
 			"station" : stationName,
 		},
 		dataType: 'json',
 		success : function(data) {
-		    callback(data);
+		    stationData = data;
 		},
 		error : function(jqXHR, textStatus, errorThrown) {
 		alert("error");
@@ -139,6 +140,7 @@ L.tileLayer('http://{s}.tile.openstreetmap.se/hydda/roads_and_labels/{z}/{x}/{y}
 	});
 	return stationData;
 }
+
     </script>
 
     <!-- Modal sfbaypier17a-->
@@ -162,8 +164,6 @@ L.tileLayer('http://{s}.tile.openstreetmap.se/hydda/roads_and_labels/{z}/{x}/{y}
                 <div id="pier17do-tab" class="tab-pane fade in active">
                     <script>
                       var sensorData=getData("sfbaypier17ado");
-                      console.log("here is the data");
-                      console.log(sensorData);
                     chart("#pier17do-tab",sensorData,"Dissolved Oxygen (%)","%",",.2f",85);
                     </script>
                 </div>
