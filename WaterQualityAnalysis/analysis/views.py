@@ -2,8 +2,8 @@ from django.shortcuts import render
 from django.db import connection
 import math
 import json
+import collections
 import os.path
-from collections import defaultdict
 from django.http import HttpResponse
 
 
@@ -19,7 +19,39 @@ def ccme(request):
     return render(request, 'ccmeAnalysis.html',{'data': json.dumps(qualitydata)})
 
 def qualityTrends(request):
-    return render(request, 'madhav/index.html',{})
+    db = connection
+    cursor = db.cursor()
+    cursor.execute("SELECT id,stationname,latitude,longitude,sensorslist FROM stationlist")
+    rows = cursor.fetchall()
+    objects_list = []
+    for row in rows:
+        d = collections.OrderedDict()
+        d['id'] = row[0]
+        d['stationname'] = row[1]
+        d['latitude'] = row[2]
+        d['longitude'] = row[3]
+        d['sensorlist'] = row[4]
+        objects_list.append(d)
+
+    j = json.dumps(objects_list)
+    return render(request, 'madhav/index.html',{'stationData': j})
+
+def getSensorData(request):
+    stationName = request.GET['station']
+    print stationName
+    db = connection
+    cursor = db.cursor()
+    cursor.execute("SELECT date,value FROM sfbaypier17ado")
+    rows = cursor.fetchall()
+    objects_list = []
+    for row in rows:
+        d = collections.OrderedDict()
+        d['date'] = row[0]
+        d['value'] = row[1]
+        objects_list.append(d)
+
+    j = json.dumps(objects_list)
+    return HttpResponse(json.dumps(j), content_type = "application/json")
 
 def calculateCCMEwqi():
     db = connection

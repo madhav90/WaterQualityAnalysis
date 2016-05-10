@@ -1,9 +1,11 @@
 <html>
 <head>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href='static/style.css'>
+    <script src="/static/sankey.js"></script>
     <title>Water project</title>
 
 </head>
@@ -56,22 +58,83 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-sm-4">
-            <h3>Analysis</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+        <div class="col-sm-8">
+            <br><br>
+            <h2>Aquatic Life is in Danger</h2>
+
         </div>
         <div class="col-sm-4">
-            <h3>Prediction</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-        </div>
-        <div class="col-sm-4">
-            <h3>Our Index</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+            <br><br>
+            <blockquote><p>"Three large marine mammals washed up dead at Ocean Beach. Cause of the death might be water pollution…"</p>
+            <p><small>ABC San Francisco transcript, Jul 6, 2015</small></p>
+            <p>"At least two dead sea lions, including one large adult, and one large dolphin, washed ashore today along Ocean Beach
+                and there may be more to come… </p>
+            <p><small>SFist, Jul 6, 2015</small></p>
+            <p>"Thousands of jellyfish-like creatures have washed ashore in at least two places along the Bay Area shoreline."</p>
+                <p><small>ABC</small></p>
+            </blockquote>
         </div>
     </div>
+    <div class="row">
+        <br><br>
+        <div class="panel panel-default">
+             <div class="panel-body">
+        <div class="col-sm-5">
+            <h3>Factors Affecting Aquatic Life</h3>
+            <p>
+                For aquatic ecosystems, these factors include<br>
+                Dissolved Oxygen:Aquatic animals need dissolved oxygen (DO) to live.<br>
+                Biological Oxygen Demand (BOD): It is needed to decompose organic (plant) material and human/animal wastes (sewage).<br>
+                Nitrates: Nitrogen is essential for plant growth,
+                but the presence of excessive amounts in water supplies presents a major pollution problem.<br>
+                pH: A pH of 6.5 to 8.2 is optimal for most organisms.<br>
+                Turbidity: Turbidity, or cloudiness in water, is caused by suspended materials that scatter light passing through the water.<br>
+                Phosphates: Phosphates accelerate the growth of algae and aquatic plants.<br>
+                Water Temperatures:Temperature is one factor in determining which species may or may not be present.<br>
+                Water Color (chlorophyll)
+                Salinity
+            </p>
+         </div>
+        <div class="col-sm-7">
+            <div id="sankey_multiple" style="width: 900px; height: 300px;"></div>
+        </div>
+                 </div>
+            </div>
+
+    </div>
+    <div class="row">
+        <br><br>
+        <div class="col-sm-4">
+            <div class="panel panel-default">
+             <div class="panel-heading"><h4 align="center">Analysis</h4></div>
+                <div class="panel-body"><p>Water Quality Index</p>
+            <p>CCME Index</p>
+            <p><a href="cluster">View More</a></p></div>
+            </div>
+
+
+        </div>
+        <div class="col-sm-4">
+             <div class="panel panel-default">
+             <div class="panel-heading"><h4 align="center">Real Time Monitor</h4></div>
+                <div class="panel-body"><p>..todo</p>
+                    <p>..todo</p>
+            <p><a href="qualityTrends">View More</a></p>
+                    </div>
+
+        </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="panel panel-default">
+                <div class="panel-heading"><h4 align="center">Solution</h4></div>
+             <div class="panel-body">
+            <p>Big data</p>
+            <p>Spider Index</p>
+            <p><a href="#">View More</a></p></div>
+            </div>
+            </div>
+    </div>
+
     <footer>
         <hr><br><br>
         <p class="pull-right"><a href="#">Back to top</a></p>

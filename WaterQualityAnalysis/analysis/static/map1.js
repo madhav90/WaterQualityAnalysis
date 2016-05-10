@@ -1,4 +1,5 @@
 // initialize the map
+
 var map = L.map('map').setView([37.76, -122.35], 9);
 //    -122.354736
 //    37.762030
@@ -10,10 +11,11 @@ L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/M
 L.tileLayer('http://{s}.tile.openstreetmap.se/hydda/roads_and_labels/{z}/{x}/{y}.png', {
     attribution: 'Tiles courtesy of <a href="http://openstreetmap.se/" target="_blank">OpenStreetMap Sweden</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
-
 // load GeoJSON from an external file
 $.getJSON("static/php/stationlist.php", function (data) {
+console.log("data[i].latitude");
     for (var i = 0; i < data.length; i++) {
+    console.log(data[i].latitude);
         var location = new L.LatLng(data[i].latitude, data[i].longitude);
         var id = data[i].id;
         var stationname = data[i].stationname;
