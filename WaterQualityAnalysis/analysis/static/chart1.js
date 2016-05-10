@@ -1,4 +1,5 @@
 function chart(modaldivid, phpfile, parameter, sign, floatingPoint, safevalue) {
+    console.log("phpfile: "+ phpfile);
     var margin = {top: 10, right: 91, bottom: 100, left: 50},
         margin2 = {top: 430, right: 91, bottom: 20, left: 50},
         width = 960 - margin.left - margin.right,
