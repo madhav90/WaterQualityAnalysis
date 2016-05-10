@@ -41,7 +41,7 @@ def getSensorData(request):
     print stationName
     db = connection
     cursor = db.cursor()
-    cursor.execute("SELECT date,value FROM sfbaypier17ado")
+    cursor.execute("SELECT date,value FROM "+stationName)
     rows = cursor.fetchall()
     objects_list = []
     for row in rows:

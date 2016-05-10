@@ -83,11 +83,7 @@ function chart(modaldivid, phpfile, parameter, sign, floatingPoint, safevalue) {
 //    d3.csv(file, function (error, data) {
 
     //"php/sfbaypier17ado.php"
-
-    d3.json(phpfile, function (error, data) {
-        if (error) {
-            console.log(error);
-        }
+    var data = JSON.parse(phpfile);
         data.forEach(function (d) {
             d.date = parseDate(d.date);
             d.value = +d.value;
@@ -298,8 +294,6 @@ function chart(modaldivid, phpfile, parameter, sign, floatingPoint, safevalue) {
             //console.log(width,"+",height);
         }
 
-
-    });
 
     function brushed() {
         x.domain(brush.empty() ? x2.domain() : brush.extent());

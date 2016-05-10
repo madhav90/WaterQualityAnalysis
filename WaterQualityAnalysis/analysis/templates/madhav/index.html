@@ -90,7 +90,7 @@
 </nav>
 <div class="mapContainer">
     <br><br><br><br>
-<script src="static/chart1.js"></script>
+<script src="static/chart.js"></script>
 
 <div id="map"></div>
     <script>var map = L.map('map').setView([37.76, -122.35], 9);
@@ -120,7 +120,7 @@ L.tileLayer('http://{s}.tile.openstreetmap.se/hydda/roads_and_labels/{z}/{x}/{y}
     function getData(stationName, handledata)
     {
     var stationData;
-    alert("in getData");
+
 	//make db connection
 	$.ajax({
 		url : 'getSensorData',
@@ -134,7 +134,7 @@ L.tileLayer('http://{s}.tile.openstreetmap.se/hydda/roads_and_labels/{z}/{x}/{y}
 		    handledata(data);
 		},
 		error : function(jqXHR, textStatus, errorThrown) {
-		alert("error");
+
 			console.log('error here' + textStatus + "" + errorThrown);
 		}
 	});
@@ -143,6 +143,9 @@ L.tileLayer('http://{s}.tile.openstreetmap.se/hydda/roads_and_labels/{z}/{x}/{y}
 
 
     </script>
+
+
+
 
     <!-- Modal sfbaypier17a-->
 <div id="sfbaypier17a" class="modal fade" role="dialog" >
@@ -164,14 +167,426 @@ L.tileLayer('http://{s}.tile.openstreetmap.se/hydda/roads_and_labels/{z}/{x}/{y}
             <div class="tab-content">
                 <div id="pier17do-tab" class="tab-pane fade in active">
                     <script>
-
-                      getData("sfbaypier17ado",function(output){
+                     getData("sfbaypier17ado",function(output){
                       chart("#pier17do-tab",output,"Dissolved Oxygen (%)","%",",.2f",85);
+                      });
+                    </script>
+                </div>
+                <div id="pier17salinity-tab" class="tab-pane fade">
+                    <script>
+                      getData("sfbaypier17asalinity",function(output){
+                      chart("#pier17salinity-tab",output,"Salinity (PSS)","PSS",",.2f",25);
                       });
 
                     </script>
                 </div>
+                <div id="pier17temperature-tab" class="tab-pane fade">
+                    <script>
+                      getData("sfbaypier17atemp",function(output){
+                      chart("#pier17temperature-tab",output,"Temperature (°F)","°F",",.2f",53);
 
+                      });
+
+                    </script>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+        </div>
+    </div>
+
+</div>
+</div>
+
+<!-- Modal sfbaysanmateobridge-->
+<div id="sfbaysanmateobridge" class="modal fade" role="dialog" >
+      <div class="modal-dialog modal-lg">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">SF Bay at San Mateo Bridge</h4>
+        </div>
+        <div class="modal-body">
+            <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#sanmateodo-tab">Dissolved Oxygen</a></li>
+                <li><a data-toggle="tab" href="#sanmateotemperature-tab">Water Temperature</a></li>
+            </ul>
+
+            <div class="tab-content">
+                <div id="sanmateodo-tab" class="tab-pane fade in active">
+                    <script>
+                    getData("sfbaysanmateobridgedo",function(output){
+                      chart("#sanmateodo-tab",output,"Dissolved Oxygen (%)","%",",.2f",85);
+
+                      });
+
+
+                    </script>
+                </div>
+                <div id="sanmateotemperature-tab" class="tab-pane fade">
+                    <script>
+                     getData("sfbaysanmateobridgetemp",function(output){
+                     chart("#sanmateotemperature-tab",output,"Temperature (°F)","°F",",.2f",53);
+
+                      });
+
+                    </script>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+        </div>
+    </div>
+
+</div>
+</div>
+
+<!-- Modal sfbaydumbartonbridge-->
+<div id="sfbaydumbartonbridge" class="modal fade" role="dialog" >
+      <div class="modal-dialog modal-lg">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">SF Bay at Dumbarton Bridge</h4>
+        </div>
+        <div class="modal-body">
+            <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#dumbartondo-tab">Dissolved Oxygen</a></li>
+                <li><a data-toggle="tab" href="#dumbartontemperature-tab">Water Temperature</a></li>
+            </ul>
+
+            <div class="tab-content">
+                <div id="dumbartondo-tab" class="tab-pane fade in active">
+                    <script>
+                        getData("sfbaydumbartonbridgedo",function(output){
+                     chart("#dumbartondo-tab",output,"Dissolved Oxygen (%)","%",",.2f",85);
+
+                      });
+
+                    </script>
+                </div>
+                <div id="dumbartontemperature-tab" class="tab-pane fade">
+                    <script>
+                        getData("sfbaydumbartonbridgetemp",function(output){
+                    chart("#dumbartontemperature-tab",output,"Temperature (°F)","°F",",.2f",53);
+                    });
+                    </script>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+        </div>
+    </div>
+
+</div>
+</div>
+
+<!-- Modal fortpoint-->
+<div id="fortpoint" class="modal fade" role="dialog" >
+      <div class="modal-dialog modal-lg">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Fort Point</h4>
+        </div>
+        <div class="modal-body">
+            <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#fortpointchlorophyll-tab">Chlorophyll</a></li>
+                <li><a data-toggle="tab" href="#fortpointsalinity-tab">Salinity</a></li>
+                <li><a data-toggle="tab" href="#fortpointtemperature-tab">Water Temperature</a></li>
+            </ul>
+
+            <div class="tab-content">
+                <div id="fortpointchlorophyll-tab" class="tab-pane fade in active">
+                    <script>
+                       getData("fortpointchlorophyll",function(output){
+                    chart("#fortpointchlorophyll-tab",output,"Chlorophyll (μg/L)","μg/L",",.2f",0.3);
+                    });
+                    </script>
+                </div>
+                <div id="fortpointsalinity-tab" class="tab-pane fade">
+                    <script>
+                       getData("fortpointsalinity",function(output){
+                    chart("#fortpointsalinity-tab",output,"Salinity (PSS)","PSS",",.2f",25); });
+                    </script>
+                </div>
+                <div id="fortpointtemperature-tab" class="tab-pane fade">
+                    <script>
+                        getData("fortpointtemp",function(output){
+                    chart("#fortpointtemperature-tab",output,"Temperature (°F)","°F",",.2f",53); });
+                    </script>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+        </div>
+    </div>
+
+</div>
+</div>
+
+<!-- Modal carquinez-->
+<div id="carquinez" class="modal fade" role="dialog" >
+      <div class="modal-dialog modal-lg">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Carquinez</h4>
+        </div>
+        <div class="modal-body">
+            <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#carqdo-tab">Dissolved Oxygen</a></li>
+                <li><a data-toggle="tab" href="#carqsalinity-tab">Salinity</a></li>
+                <li><a data-toggle="tab" href="#carqtemperature-tab">Water Temperature</a></li>
+                <li><a data-toggle="tab" href="#carqchlorophyll-tab">Chlorophyll</a></li>
+                <li><a data-toggle="tab" href="#carqph-tab">pH</a></li>
+                <li><a data-toggle="tab" href="#carqturbidity-tab">Turbidity</a></li>
+            </ul>
+
+            <div class="tab-content">
+                <div id="carqdo-tab" class="tab-pane fade in active">
+                    <script>
+                       getData("carquinezdo",function(output){
+                    chart("#carqdo-tab",output,"Dissolved Oxygen (%)","%",",.2f",85); });
+                    </script>
+                </div>
+                <div id="carqsalinity-tab" class="tab-pane fade">
+                    <script>
+                    getData("carquinezsalinity",function(output){
+                       chart("#carqsalinity-tab",output,"Salinity (PSS)","PSS",",.2f",25); });
+                    </script>
+                </div>
+                <div id="carqtemperature-tab" class="tab-pane fade">
+                    <script>
+                     getData("carquineztemp",function(output){
+                     chart("#carqtemperature-tab",output,"Temperature (°F)","°F",",.2f",53); });
+                    </script>
+                </div>
+                <div id="carqchlorophyll-tab" class="tab-pane fade">
+                    <script>
+                    getData("carquinezchlorophyll",function(output){
+                      chart("#carqchlorophyll-tab",output,"Chlorophyll (μg/L)","μg/L",",.2f",0.3); });
+                    </script>
+                </div>
+                <div id="carqph-tab" class="tab-pane fade">
+                    <script>
+                     getData("carquinezph",function(output){
+                    chart("#carqph-tab",output,"pH (fraction)","fraction",",.2f",7.5); });
+                    </script>
+                </div>
+                <div id="carqturbidity-tab" class="tab-pane fade">
+                    <script>
+                       getData("carquinezturbidity",function(output){
+                       chart("#carqturbidity-tab",output,"Turbidity (NTU)","NTU",",.2f",2); });
+                    </script>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+        </div>
+    </div>
+
+</div>
+</div>
+
+<!-- Modal tiburon-->
+<div id="tiburon" class="modal fade" role="dialog" >
+      <div class="modal-dialog modal-lg">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Tiburon</h4>
+        </div>
+        <div class="modal-body">
+            <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#tibdo-tab">Dissolved Oxygen</a></li>
+                <li><a data-toggle="tab" href="#tibsalinity-tab">Salinity</a></li>
+                <li><a data-toggle="tab" href="#tibtemperature-tab">Water Temperature</a></li>
+                <li><a data-toggle="tab" href="#tibchlorophyll-tab">Chlorophyll</a></li>
+                <li><a data-toggle="tab" href="#tibph-tab">pH</a></li>
+                <li><a data-toggle="tab" href="#tibturbidity-tab">Turbidity</a></li>
+            </ul>
+
+            <div class="tab-content">
+                <div id="tibdo-tab" class="tab-pane fade in active">
+                    <script>
+                      getData("tiburondo",function(output){
+                      chart("#tibdo-tab",output,"Dissolved Oxygen (%)","%",",.2f",85); });
+                    </script>
+                </div>
+                <div id="tibsalinity-tab" class="tab-pane fade">
+                    <script>
+                     getData("tiburonsalinity",function(output){
+                     chart("#tibsalinity-tab",output,"Salinity (PSS)","PSS",",.2f",25); });
+                    </script>
+                </div>
+                <div id="tibtemperature-tab" class="tab-pane fade">
+                    <script>
+                    getData("tiburontemp",function(output){
+                    chart("#tibtemperature-tab",output,"Temperature (°F)","°F",",.2f",53); });
+                    </script>
+                </div>
+                <div id="tibchlorophyll-tab" class="tab-pane fade">
+                    <script>
+                     getData("tiburonchlorophyll",function(output){
+                     chart("#tibchlorophyll-tab",output,"Chlorophyll (μg/L)","μg/L",",.2f",0.3); });
+                    </script>
+                </div>
+                <div id="tibph-tab" class="tab-pane fade">
+                    <script>
+                     getData("tiburonph",function(output){
+                     chart("#tibph-tab",output,"pH (fraction)","fraction",",.2f",7.5); });
+                    </script>
+                </div>
+                <div id="tibturbidity-tab" class="tab-pane fade">
+                    <script>
+                    getData("tiburonturbidity",function(output){
+                    chart("#tibturbidity-tab",output,"Turbidity (NTU)","NTU",",.2f",2); });
+                    </script>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+        </div>
+    </div>
+
+</div>
+</div>
+
+<!-- Modal gallinascreek-->
+<div id="gallinascreek" class="modal fade" role="dialog" >
+      <div class="modal-dialog modal-lg">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Gallinas Creek</h4>
+        </div>
+        <div class="modal-body">
+            <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#gcreekdo-tab">Dissolved Oxygen</a></li>
+                <li><a data-toggle="tab" href="#gcreeksalinity-tab">Salinity</a></li>
+                <li><a data-toggle="tab" href="#gcreektemperature-tab">Water Temperature</a></li>
+                <li><a data-toggle="tab" href="#gcreekwaterlevel-tab">Water Level</a></li>
+                <li><a data-toggle="tab" href="#gcreekph-tab">pH</a></li>
+                <li><a data-toggle="tab" href="#gcreekturbidity-tab">Turbidity</a></li>
+            </ul>
+
+            <div class="tab-content">
+                <div id="gcreekdo-tab" class="tab-pane fade in active">
+                    <script>
+                    getData("gallinascreekdo",function(output){
+                    chart("#gcreekdo-tab",output,"Dissolved Oxygen (%)","%",",.2f",85); });
+                    </script>
+                </div>
+                <div id="gcreeksalinity-tab" class="tab-pane fade">
+                    <script>
+                     getData("gallinascreeksalinity",function(output){
+                     chart("#gcreeksalinity-tab",output,"Salinity (PSS)","PSS",",.2f",25); });
+                    </script>
+                </div>
+                <div id="gcreektemperature-tab" class="tab-pane fade">
+                    <script>
+                    getData("gallinascreektemp",function(output){
+                    chart("#gcreektemperature-tab",output,"Temperature (°F)","°F",",.2f",53); });
+                    </script>
+                </div>
+                <div id="gcreekwaterlevel-tab" class="tab-pane fade">
+                    <script>
+                    getData("gallinascreekwaterlevel",function(output){
+                    chart("#gcreekwaterlevel-tab",output,"Water Level (ft)","ft",",.2f",5); });
+                    </script>
+                </div>
+                <div id="gcreekph-tab" class="tab-pane fade">
+                    <script>
+                     getData("gallinascreekph",function(output){
+                     chart("#gcreekph-tab",output,"pH (fraction)","fraction",",.2f",7.5); });
+                    </script>
+                </div>
+                <div id="gcreekturbidity-tab" class="tab-pane fade">
+                    <script>
+                     getData("gallinascreekturbidity",function(output){
+                     chart("#gcreekturbidity-tab",output,"Turbidity (NTU)","NTU",",.2f",2); });
+                    </script>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+        </div>
+    </div>
+
+</div>
+</div>
+
+<!-- Modal chinacamp-->
+<div id="chinacamp" class="modal fade" role="dialog" >
+      <div class="modal-dialog modal-lg">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">China Camp</h4>
+        </div>
+        <div class="modal-body">
+            <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#ccampdo-tab">Dissolved Oxygen</a></li>
+                <li><a data-toggle="tab" href="#ccampsalinity-tab">Salinity</a></li>
+                <li><a data-toggle="tab" href="#ccamptemperature-tab">Water Temperature</a></li>
+                <li><a data-toggle="tab" href="#ccampwaterlevel-tab">Water Level</a></li>
+                <li><a data-toggle="tab" href="#ccampph-tab">pH</a></li>
+                <li><a data-toggle="tab" href="#ccampturbidity-tab">Turbidity</a></li>
+            </ul>
+
+            <div class="tab-content">
+                <div id="ccampdo-tab" class="tab-pane fade in active">
+                    <script>
+                    getData("chinacampdo",function(output){
+                    chart("#ccampdo-tab",output,"Dissolved Oxygen (%)","%",",.2f",85); });
+                    </script>
+                </div>
+                <div id="ccampsalinity-tab" class="tab-pane fade">
+                    <script>
+                    getData("chinacampsalinity",function(output){
+                    chart("#ccampsalinity-tab",output,"Salinity (PSS)","PSS",",.2f",25); });
+                    </script>
+                </div>
+                <div id="ccamptemperature-tab" class="tab-pane fade">
+                    <script>
+                     getData("chinacamptemp",function(output){
+                     chart("#ccamptemperature-tab",output,"Temperature (°F)","°F",",.2f",53); });
+                    </script>
+                </div>
+                <div id="ccampwaterlevel-tab" class="tab-pane fade">
+                    <script>
+                     getData("chinacampwaterlevel",function(output){
+                     chart("#ccampwaterlevel-tab",output,"Water Level (ft)","ft",",.2f",5); });
+                    </script>
+                </div>
+                <div id="ccampph-tab" class="tab-pane fade">
+                    <script>
+                    getData("chinacampph",function(output){
+                    chart("#ccampph-tab",output,"pH (fraction)","fraction",",.2f",7.5); });
+                    </script>
+                </div>
+                <div id="ccampturbidity-tab" class="tab-pane fade">
+                    <script>
+                    getData("chinacampturbidity",function(output){
+                    chart("#ccampturbidity-tab",output,"Turbidity (NTU)","NTU",",.2f",2);
+                    });
+                    </script>
+                </div>
             </div>
         </div>
         <div class="modal-footer">
