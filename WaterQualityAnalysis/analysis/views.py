@@ -15,7 +15,18 @@ def cluster(request):
     return render(request, 'cluster.html',{'yearData': json.dumps(qualitydata)})
 
 def spider(request):
-    return render(request, 'spider.html',{})
+    return render(request, 'chl_index.html',{})
+
+def do_index(request):
+    return render(request, 'do_index.html',{})
+def ph_index(request):
+    return render(request, 'ph_index.html',{})
+def salinity_index(request):
+    return render(request, 'salinity_index.html',{})
+def turbidity_index(request):
+    return render(request, 'turbidity_index.html',{})
+def water_index(request):
+    return render(request, 'watertemp_index.html',{})
 
 def qualityTrends(request):
     db = connection
