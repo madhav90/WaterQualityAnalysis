@@ -69,9 +69,11 @@ def calculateCCMEwqi():
     cursor.execute("SELECT distinct(station) from usgsdata")
     data = cursor.fetchall()
     ccmedata=[];
+
     for row in data:
         cursor.execute("select * from usgsdata group by station having station=" + row[0])
         data1 = cursor.fetchone()
+        col = [i[0] for i in cursor.description]
         cursor.execute("select latitude,longitude from usgs_station where station=" + row[0])
         coordinate = cursor.fetchone()
         if(coordinate == None):
@@ -79,19 +81,24 @@ def calculateCCMEwqi():
         lat = coordinate[0]
         long = coordinate[1]
         numOfVar = 0
+        numVar= []
         for i in range(2,10):
             if data1[i] != None:
                 numOfVar += 1
+                numVar.append(col[i])
+        print numVar
         cursor.execute("select distinct year(date) from usgsdata where station=" + row[0])
         data2 = cursor.fetchall();
         for row2 in data2:
             k= str(row2[0])
             cursor.execute("select * from usgsdata where station=" + row[0] + " and year(date)=" + k)
+            col_names = [i[0] for i in cursor.description]
             data3=cursor.fetchall();
             outOfRangeValue = 0;
             totalValue=0;
             totalExcursion=0;
             dict={};
+            outParam=[];
             for row3 in data3:
                 for j in range(2,10):
                     if row3[j] != None:
@@ -100,10 +107,11 @@ def calculateCCMEwqi():
                         totalExcursion += excursion
                         if flag == 1:
                             outOfRangeValue +=1
-                            dict[j]=1;
+                            dict[col_names[j]]=1;
+            for key in dict:
+                outParam.append(key)
             outOfRangeParam=len(dict)
             nse = totalExcursion/totalValue
-
             #The number of variables not meeting objectives
             f1 = (outOfRangeParam/numOfVar)*100
             #The number of tests not meeting objectives
@@ -112,7 +120,8 @@ def calculateCCMEwqi():
             f3 = nse/(0.01*nse + 0.01)
             # CCME water Quality Index
             ccmeWQI=100-(math.sqrt(pow(f1,2) + pow(f2,2) + pow(f3,2))/1.732)
-            ccmedata.append({ "station" : row[0], "year" : row2[0], "ccmeWQI" : ccmeWQI, "lat" : lat, "long" : long ,"paramNum" : numOfVar } )
+            ccmedata.append({ "station" : row[0], "year" : row2[0], "ccmeWQI" : ccmeWQI, "lat" : lat, "long" : long ,"paramNum" : numOfVar,
+                              "outParam" : outParam, "paramUsed" : numVar} )
     db.close()
     return ccmedata
 

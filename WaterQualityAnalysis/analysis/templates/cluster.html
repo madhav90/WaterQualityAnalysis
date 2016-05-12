@@ -181,11 +181,15 @@ info.onAdd = function (map) {
 info.update = function (props) {
 
     this._div.innerHTML = '<h4>Water Quality</h4>' +  (props ?
-        '<b> Station Number:' + props.station + '</b><br /><b>Quality Value:' + getvalue(props)
+        '<b> Station Number:' + props.station + '</b><br /><b>Quality Value(out of100): ' + getIndex(props)+ '</b><br /><b>Out of Range Parameter: '
+        + getOutParam(props)
         : 'Hover over a region');
-};
+        if(props!=null){
+            var paramUsed = getVar(props);
+        }
 
-function getvalue(props){
+};
+function getIndex(props){
     for(i=0;i<yearData.length;i++){
     if(yearData[i].year==selectedYear && yearData[i].station==props.station){
       return yearData[i].ccmeWQI;
@@ -194,10 +198,50 @@ function getvalue(props){
    return props.wqi;
 }
 
+function getOutParam(props){
+    for(i=0;i<yearData.length;i++){
+    if(yearData[i].year==selectedYear && yearData[i].station==props.station){
+        if(yearData[i].outParam.length ==0)
+        return "None";
+      return yearData[i].outParam;
+      }
+     }
+   return "None";
+}
+function getnumVar(props){
+    for(i=0;i<yearData.length;i++){
+    if(yearData[i].year==selectedYear && yearData[i].station==props.station){
+      return yearData[i].paramNum;
+      }
+     }
+   return " ";
+}
+function getVar(props){
+    for(i=0;i<yearData.length;i++){
+    if(yearData[i].year==selectedYear && yearData[i].station==props.station){
+      return yearData[i].paramUsed;
+      }
+     }
+   return " ";
+}
+
 info.addTo(map);
 
 //---- Legends
 var legend = L.control({position: 'bottomright'});
+
+legend.onAdd = function (map) {
+
+    var div = L.DomUtil.create('div', 'info legend');
+    div.innerHTML += '<b>Parameters Used For Analysis:</b>'+'<br/>'+'chlorophyll'+ '<br/>'+'BOD'+'<br/>'+'DO'+'<br/>'+'turbidity'+'<br/>'+'salinity'
+    +'<br/>'+'temperature'+ '<br/>'+'nitrates'+'<br/>'+'phosphates';
+
+    return div;
+};
+
+legend.addTo(map);
+
+var legend = L.control({position: 'bottomleft'});
 
 legend.onAdd = function (map) {
 
@@ -216,6 +260,7 @@ legend.onAdd = function (map) {
 };
 
 legend.addTo(map);
+
 
 
 
