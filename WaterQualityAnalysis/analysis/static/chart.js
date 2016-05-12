@@ -1,4 +1,4 @@
-function chart(modaldivid, phpfile, parameter, sign, floatingPoint, safevalue) {
+function chart(modaldivid, phpfile, parameter, sign, svtext, safevalue) {
     console.log("phpfile: "+ phpfile);
     var margin = {top: 10, right: 91, bottom: 100, left: 50},
         margin2 = {top: 430, right: 91, bottom: 20, left: 50},
@@ -14,7 +14,7 @@ function chart(modaldivid, phpfile, parameter, sign, floatingPoint, safevalue) {
             return d.date;
         }).left,
         formatDate = d3.time.format("%d-%b-%y"),
-        formatValue = d3.format(floatingPoint),
+        formatValue = d3.format(".2f"),
         formatData = function (d) {
             return formatValue(d) + " " + sign;
         };
@@ -125,12 +125,12 @@ function chart(modaldivid, phpfile, parameter, sign, floatingPoint, safevalue) {
             .attr("stroke", "orangered");
 
         focus.append("text")
-            .attr("transform", "translate(" + (width - 78) + "," + y(safevalue - 2) + ")")
+            .attr("transform", "translate(" + (width - 125) + "," + y(svtext) + ")")
             .attr("dy", ".35em")
             .attr("text-anchor", "start")
             .style("fill", "orangered")
             .text(function (d) {
-                return "Safe Value = " + safevalue
+                return "Recommended Value = " + safevalue
             });
 
 

@@ -1,5 +1,6 @@
 <html>
 <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <title>Water Quality Analysis</title>
 
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>
@@ -168,14 +169,14 @@ L.tileLayer('http://{s}.tile.openstreetmap.se/hydda/roads_and_labels/{z}/{x}/{y}
                 <div id="pier17do-tab" class="tab-pane fade in active">
                     <script>
                      getData("sfbaypier17ado",function(output){
-                      chart("#pier17do-tab",output,"Dissolved Oxygen (%)","%",",.2f",85);
+                      chart("#pier17do-tab",output,"Dissolved Oxygen (%)","%",48,50);
                       });
                     </script>
                 </div>
                 <div id="pier17salinity-tab" class="tab-pane fade">
                     <script>
                       getData("sfbaypier17asalinity",function(output){
-                      chart("#pier17salinity-tab",output,"Salinity (PSS)","PSS",",.2f",25);
+                      chart("#pier17salinity-tab",output,"Salinity (PSS)","PSS",23,25);
                       });
 
                     </script>
@@ -183,7 +184,7 @@ L.tileLayer('http://{s}.tile.openstreetmap.se/hydda/roads_and_labels/{z}/{x}/{y}
                 <div id="pier17temperature-tab" class="tab-pane fade">
                     <script>
                       getData("sfbaypier17atemp",function(output){
-                      chart("#pier17temperature-tab",output,"Temperature (°F)","°F",",.2f",53);
+                      chart("#pier17temperature-tab",output,"Temperature (°F)","°F",51,53);
 
                       });
 
@@ -218,7 +219,7 @@ L.tileLayer('http://{s}.tile.openstreetmap.se/hydda/roads_and_labels/{z}/{x}/{y}
                 <div id="sanmateodo-tab" class="tab-pane fade in active">
                     <script>
                     getData("sfbaysanmateobridgedo",function(output){
-                      chart("#sanmateodo-tab",output,"Dissolved Oxygen (%)","%",",.2f",85);
+                      chart("#sanmateodo-tab",output,"Dissolved Oxygen (%)","%",48,50);
 
                       });
 
@@ -228,7 +229,7 @@ L.tileLayer('http://{s}.tile.openstreetmap.se/hydda/roads_and_labels/{z}/{x}/{y}
                 <div id="sanmateotemperature-tab" class="tab-pane fade">
                     <script>
                      getData("sfbaysanmateobridgetemp",function(output){
-                     chart("#sanmateotemperature-tab",output,"Temperature (°F)","°F",",.2f",53);
+                     chart("#sanmateotemperature-tab",output,"Temperature (°F)","°F",51,53);
 
                       });
 
@@ -263,7 +264,7 @@ L.tileLayer('http://{s}.tile.openstreetmap.se/hydda/roads_and_labels/{z}/{x}/{y}
                 <div id="dumbartondo-tab" class="tab-pane fade in active">
                     <script>
                         getData("sfbaydumbartonbridgedo",function(output){
-                     chart("#dumbartondo-tab",output,"Dissolved Oxygen (%)","%",",.2f",85);
+                     chart("#dumbartondo-tab",output,"Dissolved Oxygen (%)","%",48,50);
 
                       });
 
@@ -272,7 +273,7 @@ L.tileLayer('http://{s}.tile.openstreetmap.se/hydda/roads_and_labels/{z}/{x}/{y}
                 <div id="dumbartontemperature-tab" class="tab-pane fade">
                     <script>
                         getData("sfbaydumbartonbridgetemp",function(output){
-                    chart("#dumbartontemperature-tab",output,"Temperature (°F)","°F",",.2f",53);
+                    chart("#dumbartontemperature-tab",output,"Temperature (°F)","°F",51,53);
                     });
                     </script>
                 </div>
@@ -306,20 +307,22 @@ L.tileLayer('http://{s}.tile.openstreetmap.se/hydda/roads_and_labels/{z}/{x}/{y}
                 <div id="fortpointchlorophyll-tab" class="tab-pane fade in active">
                     <script>
                        getData("fortpointchlorophyll",function(output){
-                    chart("#fortpointchlorophyll-tab",output,"Chlorophyll (μg/L)","μg/L",",.2f",0.3);
+                    chart("#fortpointchlorophyll-tab",output,"Chlorophyll (μg/L)","μg/L",0.1,0.3);
                     });
                     </script>
                 </div>
                 <div id="fortpointsalinity-tab" class="tab-pane fade">
                     <script>
                        getData("fortpointsalinity",function(output){
-                    chart("#fortpointsalinity-tab",output,"Salinity (PSS)","PSS",",.2f",25); });
+                    chart("#fortpointsalinity-tab",output,"Salinity (PSS)","PSS",23,25);
+                           });
                     </script>
                 </div>
                 <div id="fortpointtemperature-tab" class="tab-pane fade">
                     <script>
                         getData("fortpointtemp",function(output){
-                    chart("#fortpointtemperature-tab",output,"Temperature (°F)","°F",",.2f",53); });
+                    chart("#fortpointtemperature-tab",output,"Temperature (°F)","°F",51,53);
+                        });
                     </script>
                 </div>
             </div>
@@ -355,37 +358,43 @@ L.tileLayer('http://{s}.tile.openstreetmap.se/hydda/roads_and_labels/{z}/{x}/{y}
                 <div id="carqdo-tab" class="tab-pane fade in active">
                     <script>
                        getData("carquinezdo",function(output){
-                    chart("#carqdo-tab",output,"Dissolved Oxygen (%)","%",",.2f",85); });
+                    chart("#carqdo-tab",output,"Dissolved Oxygen (%)","%",48,50);
+                           });
                     </script>
                 </div>
                 <div id="carqsalinity-tab" class="tab-pane fade">
                     <script>
                     getData("carquinezsalinity",function(output){
-                       chart("#carqsalinity-tab",output,"Salinity (PSS)","PSS",",.2f",25); });
+                       chart("#carqsalinity-tab",output,"Salinity (PSS)","PSS",23,25);
+                        });
                     </script>
                 </div>
                 <div id="carqtemperature-tab" class="tab-pane fade">
                     <script>
                      getData("carquineztemp",function(output){
-                     chart("#carqtemperature-tab",output,"Temperature (°F)","°F",",.2f",53); });
+                     chart("#carqtemperature-tab",output,"Temperature (°F)","°F",51,53);
+                     });
                     </script>
                 </div>
                 <div id="carqchlorophyll-tab" class="tab-pane fade">
                     <script>
                     getData("carquinezchlorophyll",function(output){
-                      chart("#carqchlorophyll-tab",output,"Chlorophyll (μg/L)","μg/L",",.2f",0.3); });
+                      chart("#carqchlorophyll-tab",output,"Chlorophyll (μg/L)","μg/L",0.1,0.3);
+                    });
                     </script>
                 </div>
                 <div id="carqph-tab" class="tab-pane fade">
                     <script>
                      getData("carquinezph",function(output){
-                    chart("#carqph-tab",output,"pH (fraction)","fraction",",.2f",7.5); });
+                    chart("#carqph-tab",output,"pH (fraction)","fraction",7.3,7.5);
+                     });
                     </script>
                 </div>
                 <div id="carqturbidity-tab" class="tab-pane fade">
                     <script>
                        getData("carquinezturbidity",function(output){
-                       chart("#carqturbidity-tab",output,"Turbidity (NTU)","NTU",",.2f",2); });
+                       chart("#carqturbidity-tab",output,"Turbidity (NTU)","NTU",8,10);
+                       });
                     </script>
                 </div>
             </div>
@@ -421,37 +430,43 @@ L.tileLayer('http://{s}.tile.openstreetmap.se/hydda/roads_and_labels/{z}/{x}/{y}
                 <div id="tibdo-tab" class="tab-pane fade in active">
                     <script>
                       getData("tiburondo",function(output){
-                      chart("#tibdo-tab",output,"Dissolved Oxygen (%)","%",",.2f",85); });
+                      chart("#tibdo-tab",output,"Dissolved Oxygen (%)","%",48,50);
+                          });
                     </script>
                 </div>
                 <div id="tibsalinity-tab" class="tab-pane fade">
                     <script>
                      getData("tiburonsalinity",function(output){
-                     chart("#tibsalinity-tab",output,"Salinity (PSS)","PSS",",.2f",25); });
+                     chart("#tibsalinity-tab",output,"Salinity (PSS)","PSS",23,25);
+                         });
                     </script>
                 </div>
                 <div id="tibtemperature-tab" class="tab-pane fade">
                     <script>
                     getData("tiburontemp",function(output){
-                    chart("#tibtemperature-tab",output,"Temperature (°F)","°F",",.2f",53); });
+                    chart("#tibtemperature-tab",output,"Temperature (°F)","°F",51,53);
+                    });
                     </script>
                 </div>
                 <div id="tibchlorophyll-tab" class="tab-pane fade">
                     <script>
                      getData("tiburonchlorophyll",function(output){
-                     chart("#tibchlorophyll-tab",output,"Chlorophyll (μg/L)","μg/L",",.2f",0.3); });
+                     chart("#tibchlorophyll-tab",output,"Chlorophyll (μg/L)","μg/L",0.1,0.3);
+                     });
                     </script>
                 </div>
                 <div id="tibph-tab" class="tab-pane fade">
                     <script>
                      getData("tiburonph",function(output){
-                     chart("#tibph-tab",output,"pH (fraction)","fraction",",.2f",7.5); });
+                     chart("#tibph-tab",output,"pH (fraction)","fraction",7.3,7.5);
+                     });
                     </script>
                 </div>
                 <div id="tibturbidity-tab" class="tab-pane fade">
                     <script>
                     getData("tiburonturbidity",function(output){
-                    chart("#tibturbidity-tab",output,"Turbidity (NTU)","NTU",",.2f",2); });
+                    chart("#tibturbidity-tab",output,"Turbidity (NTU)","NTU",8,10);
+                    });
                     </script>
                 </div>
             </div>
@@ -487,37 +502,43 @@ L.tileLayer('http://{s}.tile.openstreetmap.se/hydda/roads_and_labels/{z}/{x}/{y}
                 <div id="gcreekdo-tab" class="tab-pane fade in active">
                     <script>
                     getData("gallinascreekdo",function(output){
-                    chart("#gcreekdo-tab",output,"Dissolved Oxygen (%)","%",",.2f",85); });
+                    chart("#gcreekdo-tab",output,"Dissolved Oxygen (%)","%",48,50);
+                        });
                     </script>
                 </div>
                 <div id="gcreeksalinity-tab" class="tab-pane fade">
                     <script>
                      getData("gallinascreeksalinity",function(output){
-                     chart("#gcreeksalinity-tab",output,"Salinity (PSS)","PSS",",.2f",25); });
+                     chart("#gcreeksalinity-tab",output,"Salinity (PSS)","PSS",23,25);
+                         });
                     </script>
                 </div>
                 <div id="gcreektemperature-tab" class="tab-pane fade">
                     <script>
                     getData("gallinascreektemp",function(output){
-                    chart("#gcreektemperature-tab",output,"Temperature (°F)","°F",",.2f",53); });
+                    chart("#gcreektemperature-tab",output,"Temperature (°F)","°F",51,53);
+                    });
                     </script>
                 </div>
                 <div id="gcreekwaterlevel-tab" class="tab-pane fade">
                     <script>
                     getData("gallinascreekwaterlevel",function(output){
-                    chart("#gcreekwaterlevel-tab",output,"Water Level (ft)","ft",",.2f",5); });
+                    chart("#gcreekwaterlevel-tab",output,"Water Level (ft)","ft",2.5,3);
+                    });
                     </script>
                 </div>
                 <div id="gcreekph-tab" class="tab-pane fade">
                     <script>
                      getData("gallinascreekph",function(output){
-                     chart("#gcreekph-tab",output,"pH (fraction)","fraction",",.2f",7.5); });
+                     chart("#gcreekph-tab",output,"pH (fraction)","fraction",7.3,7.5);
+                     });
                     </script>
                 </div>
                 <div id="gcreekturbidity-tab" class="tab-pane fade">
                     <script>
                      getData("gallinascreekturbidity",function(output){
-                     chart("#gcreekturbidity-tab",output,"Turbidity (NTU)","NTU",",.2f",2); });
+                     chart("#gcreekturbidity-tab",output,"Turbidity (NTU)","NTU",8,10);
+                     });
                     </script>
                 </div>
             </div>
@@ -553,37 +574,42 @@ L.tileLayer('http://{s}.tile.openstreetmap.se/hydda/roads_and_labels/{z}/{x}/{y}
                 <div id="ccampdo-tab" class="tab-pane fade in active">
                     <script>
                     getData("chinacampdo",function(output){
-                    chart("#ccampdo-tab",output,"Dissolved Oxygen (%)","%",",.2f",85); });
+                    chart("#ccampdo-tab",output,"Dissolved Oxygen (%)","%",48,50);
+                        });
                     </script>
                 </div>
                 <div id="ccampsalinity-tab" class="tab-pane fade">
                     <script>
-                    getData("chinacampsalinity",function(output){
-                    chart("#ccampsalinity-tab",output,"Salinity (PSS)","PSS",",.2f",25); });
+                    getData("chinacampsalinity",function(output) {
+                        chart("#ccampsalinity-tab", output, "Salinity (PSS)", "PSS", 23, 25);
+                    });
                     </script>
                 </div>
                 <div id="ccamptemperature-tab" class="tab-pane fade">
                     <script>
                      getData("chinacamptemp",function(output){
-                     chart("#ccamptemperature-tab",output,"Temperature (°F)","°F",",.2f",53); });
+                     chart("#ccamptemperature-tab",output,"Temperature (°F)","°F",51,53);
+                     });
                     </script>
                 </div>
                 <div id="ccampwaterlevel-tab" class="tab-pane fade">
                     <script>
                      getData("chinacampwaterlevel",function(output){
-                     chart("#ccampwaterlevel-tab",output,"Water Level (ft)","ft",",.2f",5); });
+                     chart("#ccampwaterlevel-tab",output,"Water Level (ft)","ft",2.5,3);
+                     });
                     </script>
                 </div>
                 <div id="ccampph-tab" class="tab-pane fade">
                     <script>
                     getData("chinacampph",function(output){
-                    chart("#ccampph-tab",output,"pH (fraction)","fraction",",.2f",7.5); });
+                    chart("#ccampph-tab",output,"pH (fraction)","fraction",7.3,7.5);
+                    });
                     </script>
                 </div>
                 <div id="ccampturbidity-tab" class="tab-pane fade">
                     <script>
                     getData("chinacampturbidity",function(output){
-                    chart("#ccampturbidity-tab",output,"Turbidity (NTU)","NTU",",.2f",2);
+                    chart("#ccampturbidity-tab",output,"Turbidity (NTU)","NTU",8,10);
                     });
                     </script>
                 </div>
