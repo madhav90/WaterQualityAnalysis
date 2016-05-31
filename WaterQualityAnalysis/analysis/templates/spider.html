@@ -11,9 +11,22 @@
 ${demo.css}
 		</style>
 		<script type="text/javascript">
-$(function () {
-
-    $('#container').highcharts({
+	function getData()
+    {
+    var stationName=$('#station').val();
+	//make db connection
+	$.ajax({
+		url : 'ajaxChange',
+		type : 'GET',
+		data :{
+			"station" : stationName,
+		},
+		dataType: 'json',
+		success : function(data) {
+		    var obj = JSON.parse(data)
+		    param = obj.parameter;
+		    index = obj.indexFull;
+		    $('#stationSpider').highcharts({
 
         chart: {
             polar: true,
@@ -21,7 +34,7 @@ $(function () {
         },
 
         title: {
-            text: 'The Dissolved Oxygen normal range is between 50 to 70%',
+            text: stationName,
             x: -70
         },
 
@@ -30,8 +43,61 @@ $(function () {
         },
 
         xAxis: {
-            categories: ['Station 1', 'Station 2', 'Station 4',
-                    'Station 5', 'Station 6', 'Station 7', 'Station 8'],
+            categories:param ,
+            tickmarkPlacement: 'on',
+            lineWidth: 0
+        },
+
+        yAxis: {
+
+           gridLineInterpolation: 'polygon',
+            lineWidth: 0,
+            min: 0
+        },
+
+        tooltip: {
+            shared: true,
+            pointFormat: '<span style="color:{series.color}">{series.name}: <b>{point.y:,.0f}%</b><br/>'
+        },
+
+        legend: {
+            align: 'right',
+            verticalAlign: 'top',
+            y: 70,
+            layout: 'vertical'
+        },
+
+        series: index
+
+    });
+		},
+		error : function(jqXHR, textStatus, errorThrown) {
+
+			console.log('error here' + textStatus + "" + errorThrown);
+		}
+	});
+}
+
+$(function () {
+
+    $('#stationSpider').highcharts({
+
+        chart: {
+            polar: true,
+            type: 'line'
+        },
+
+        title: {
+            text: 'Gallinas Creek',
+            x: -70
+        },
+
+        pane: {
+            size: '80%'
+        },
+
+        xAxis: {
+            categories: {{parameter | safe}},
             tickmarkPlacement: 'on',
             lineWidth: 0
         },
@@ -55,28 +121,54 @@ $(function () {
             layout: 'vertical'
         },
 
-        series: [{
-            name: '2011',
-            data: [50, 55, 56, 60, 66, 58, 68],
-            pointPlacement: 'on'
-        },{
-            name: '2012',
-            data: [55, 58, 67, 70, 56, 50, 66],
-            pointPlacement: 'on'
-        },{
-            name: '2013',
-            data: [54, 55, 53, 60, 50, 50, 60],
-            pointPlacement: 'on'
-        },  {
-            name: '2014',
-            data: [45, 40, 45, 35, 40, 55, 59],
-            pointPlacement: 'on'
-        }, {
-            name: '2015',
-            data: [40, 39, 42, 60, 55, 70, 80],
-            pointPlacement: 'on'
-        }]
+        series: {{indexFull | safe}}
 
+    });
+});
+$(function () {
+
+    $('#spiderQuality').highcharts({
+
+        chart: {
+            polar: true,
+            type: 'line'
+        },
+
+        title: {
+            text: 'Water Quality of Stations',
+            x: -70
+        },
+
+        pane: {
+            size: '80%'
+        },
+
+        xAxis: {
+            categories: {{stationParam | safe}},
+            tickmarkPlacement: 'on',
+            lineWidth: 0
+        },
+
+        yAxis: {
+
+           gridLineInterpolation: 'polygon',
+            lineWidth: 0,
+            min: 0
+        },
+
+        tooltip: {
+            shared: true,
+            pointFormat: '<span style="color:{series.color}">{series.name}: <b>{point.y:,.0f}</b><br/>'
+        },
+
+        legend: {
+            align: 'right',
+            verticalAlign: 'top',
+            y: 70,
+            layout: 'vertical'
+        },
+
+        series: {{qualitydata | safe}}
     });
 });
 		</script>
@@ -99,7 +191,29 @@ $(function () {
     </div>
 </nav>
 <br><br><br><br>
-<div id="container" style="min-width: 400px; max-width: 700px; height: 600px; margin: 0 auto"></div>
+<div class="container">
+    <div class="row">
+        <div id="spiderQuality" style="min-width: 400px; max-width: 700px; height: 600px; margin: 0 auto"></div>
+
+         <div style="text-align: center;">
+        <label for="station">Select Station: </label>
+        <select id="station" onChange="getData()" class="selectpicker">
+            <option value="chinacamp">chinacamp</option>
+            <option value="gallinascreek" selected>gallinascreek</option>
+            <option value="tiburon">tiburon</option>
+            <option value="carquinez">carquinez</option>
+            <option value="fortpoint">fortpoint</option>
+            <option value="sfbaypier17a">sfbaypier17a</option>
+            <option value="sfbaypier17a">sfbaysanmateobridge</option>
+            <option value="sfbaypier17a">sfbaydumbartonbridge</option>
+        </select></div>
+        <br/><br/>
+        <div id="stationSpider" style="min-width: 400px; max-width: 700px; height: 600px; margin: 0 auto"></div>
+    </div>
+</div>
+
+
+
 
 	</body>
 </html>

@@ -96,9 +96,13 @@ var selectedYear = $('#year').val();
 var mapboxAccessToken = "pk.eyJ1IjoiZG9sbHlndXB0YSIsImEiOiJjaW13Z21paG0wMzY0d2JsdTNvZWpxNmVuIn0.yOZTAE65CgxzaZ6PZw9bRA";
 var map = L.map('map').setView([37.829306, -122.071835], 10);
 
-L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=' + mapboxAccessToken, {
-    id: 'mapbox.dark'
+
+
+L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+    attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
 }).addTo(map);
+
+
 
 var yearData = {{yearData|safe}}
 //-- Get color on the basis of water Quality
@@ -241,7 +245,7 @@ legend.onAdd = function (map) {
 
 legend.addTo(map);
 
-var legend = L.control({position: 'bottomleft'});
+var legend = L.control({position: 'bottomright'});
 
 legend.onAdd = function (map) {
 
