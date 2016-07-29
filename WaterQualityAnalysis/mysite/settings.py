@@ -32,7 +32,6 @@ CORS_ALLOW_CREDENTIALS = True
 # Application definition
 
 INSTALLED_APPS = (
-    'django_cassandra_engine',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -84,8 +83,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'waterQuality',
         'USER': 'root',
-        'PASSWORD': 'root',
-        'HOST': '/Applications/XAMPP/xamppfiles/var/mysql/mysql.sock',   # Or an IP Address that your DB is hosted on
+        'PASSWORD': '',
+        'HOST': '',   # Or an IP Address that your DB is hosted on
         'PORT': '3306',
     }
 }

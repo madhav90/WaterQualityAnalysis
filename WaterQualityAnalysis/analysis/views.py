@@ -32,7 +32,7 @@ def qualityTrends(request):
         objects_list.append(d)
 
     j = json.dumps(objects_list)
-    return render(request, 'madhav/index.html',{'stationData': j})
+    return render(request, 'qualitytrends.html',{'stationData': j})
 
 def getSensorData(request):
     stationName = request.GET['station']
@@ -51,169 +51,169 @@ def getSensorData(request):
     j = json.dumps(objects_list)
     return HttpResponse(json.dumps(j), content_type = "application/json")
 
-
-def spider(request):
-    stationName = "gallinascreek"
-    data,yearData,index,indexFull,parameter = calSpiderAxis(stationName)
-    db = connection
-    cursor = db.cursor()
-    cursor.execute("select id from stationlist")
-    stationData = cursor.fetchall()
-    qualitydata=[]
-    stationParam=[]
-    yearlist=['2010','2011','2012','2013','2015','2016']
-    for station in stationData:
-        stationParam.append(station[0].encode('utf-8'))
-        print station[0]
-        data1,yearData1,qualityIndex,indexFull1,parameter1=calSpiderAxis(station[0])
-        qualitydata.append(qualityIndex)
-
-    final=[]
-    for year in yearlist:
-        wqi=[]
-        for i in range(len(qualitydata)):
-            flag=0
-            for j in range(len(qualitydata[i])):
-                if year == qualitydata[i][j].get('year'):
-                    wqi.append(qualitydata[i][j].get('index'))
-                    flag=1
-            if flag==0:
-                wqi.append(0)
-        print wqi
-        final.append({"name":year,"data":wqi,"pointPlacement":'on'})
-    print final
-    return render(request, 'spider.html',{'indexFull':json.dumps(indexFull),'parameter': parameter, 'qualitydata':json.dumps(final),"stationParam":stationParam})
-
-def spiderAjax(request):
-    stationName = request.GET['station']
-    print stationName
-    data,yearData,index,indexFull,parameter = calSpiderAxis(stationName)
-    print "inspiderajax"
-    j= json.dumps({'indexFull':indexFull,'parameter': parameter})
-    return HttpResponse(json.dumps(j), content_type = "application/json")
-
-def calSpiderAxis(stationName):
-    db = connection
-    cursor = db.cursor()
-    cursor.execute("select * from "+stationName)
-    spiderdataTotal=[];
-    qualityIndex=[];
-    indexFull=[]
-    parameter=[]
-    col_names = [i[0] for i in cursor.description]
-    cursor.execute("select distinct year(date) from "+stationName)
-    yearData=cursor.fetchall();
-    yearlist=[]
-
-    for year in yearData:
-        flag=0;
-        countSum=0;
-        k=str(year[0])
-        yearlist.append(k)
-        spiderdata=[]
-        indexshort=[]
-        parameterCount=0;
-        for j in col_names:
-            if(flag<3):
-                flag=flag+1
-                continue
-            if(j=='waterlevel'):
-                continue
-            cursor.execute("select count(distinct "+str(j)+") from "+stationName+" where year(date)="+str(k))
-            data1 = cursor.fetchall()
-            for row1 in data1:
-                if(row1[0]!=0):
-                    parameterCount+=1
-                break
-        flag=0;
-        print "parameterCount"
-        print parameterCount
-        for i in col_names:
-            if(flag<3):
-                flag=flag+1
-                continue
-            if(i=='waterlevel'):
-                continue
-            parameter.append(i)
-
-            cursor.execute("select "+i+" from "+stationName+" where year(date)="+k)
-            data = cursor.fetchall()
-            goodCount=0;
-            totalCount=0;
-            sum =0;
-            for row in data:
-                if row[0] == None:
-                    continue
-                count,deviation=checkSensorRange(i,row[0])
-                goodCount += count
-                totalCount=totalCount+1
-                sum += deviation
-            if(totalCount==0):
-                countPercent=0
-                avgDeviation=0
-            else:
-                countPercent = (goodCount*100)/totalCount
-                avgDeviation = sum/totalCount
-            countSum += countPercent
-            spiderdata.append({ "axis" :i, "value" : countPercent} )
-            indexshort.append(countPercent)
-        if parameterCount!=0:
-            countAvg = countSum/parameterCount
-        else:
-            countAvg=0
-        qualityIndex.append({"year":k, "index":countAvg})
-        spiderdataTotal.append(spiderdata)
-        indexFull.append({"name":k,"data":indexshort,"pointPlacement":'on'})
-    return spiderdataTotal,yearlist,qualityIndex,indexFull,parameter
-
-
-def checkSensorRange(parameter,value):
-    deviation=0
-    count=0
-    if(parameter=='do'):
-        if value < 70:
-            deviation = abs(value-70)
-        else:
-            count += 1
-            deviation=0
-    elif(parameter =='ph'):
-        if value < 6.5:
-            deviation = 6.5-value
-        elif value > 8.5:
-            deviation = value-8.5
-        else:
-            count += 1
-            deviation=0
-    elif(parameter=='salinity'):
-        if value > 30:
-            deviation = value-30
-        else:
-            count += 1
-            deviation=0
-    elif(parameter=='turbidity'):
-        if value > 50:
-            deviation = value-50
-        else:
-            count += 1
-            deviation=0
-    elif(parameter=='chlorophyll'):
-        if value > 3:
-            deviation = value-3
-        else:
-            count += 1
-            deviation=0
-    elif(parameter=='temp'):
-        if value < 55:
-            deviation = 55-value
-        elif value>90:
-            deviation = value-90
-        else:
-            count += 1
-            deviation=0
-    else:
-        print("no parameter")
-        print value
-    return(count, deviation)
+#
+# def spider(request):
+#     stationName = "gallinascreek"
+#     data,yearData,index,indexFull,parameter = calSpiderAxis(stationName)
+#     db = connection
+#     cursor = db.cursor()
+#     cursor.execute("select id from stationlist")
+#     stationData = cursor.fetchall()
+#     qualitydata=[]
+#     stationParam=[]
+#     yearlist=['2010','2011','2012','2013','2015','2016']
+#     for station in stationData:
+#         stationParam.append(station[0].encode('utf-8'))
+#         print station[0]
+#         data1,yearData1,qualityIndex,indexFull1,parameter1=calSpiderAxis(station[0])
+#         qualitydata.append(qualityIndex)
+#
+#     final=[]
+#     for year in yearlist:
+#         wqi=[]
+#         for i in range(len(qualitydata)):
+#             flag=0
+#             for j in range(len(qualitydata[i])):
+#                 if year == qualitydata[i][j].get('year'):
+#                     wqi.append(qualitydata[i][j].get('index'))
+#                     flag=1
+#             if flag==0:
+#                 wqi.append(0)
+#         print wqi
+#         final.append({"name":year,"data":wqi,"pointPlacement":'on'})
+#     print final
+#     return render(request, 'spider.html',{'indexFull':json.dumps(indexFull),'parameter': parameter, 'qualitydata':json.dumps(final),"stationParam":stationParam})
+#
+# def spiderAjax(request):
+#     stationName = request.GET['station']
+#     print stationName
+#     data,yearData,index,indexFull,parameter = calSpiderAxis(stationName)
+#     print "inspiderajax"
+#     j= json.dumps({'indexFull':indexFull,'parameter': parameter})
+#     return HttpResponse(json.dumps(j), content_type = "application/json")
+#
+# def calSpiderAxis(stationName):
+#     db = connection
+#     cursor = db.cursor()
+#     cursor.execute("select * from "+stationName)
+#     spiderdataTotal=[];
+#     qualityIndex=[];
+#     indexFull=[]
+#     parameter=[]
+#     col_names = [i[0] for i in cursor.description]
+#     cursor.execute("select distinct year(date) from "+stationName)
+#     yearData=cursor.fetchall();
+#     yearlist=[]
+#
+#     for year in yearData:
+#         flag=0;
+#         countSum=0;
+#         k=str(year[0])
+#         yearlist.append(k)
+#         spiderdata=[]
+#         indexshort=[]
+#         parameterCount=0;
+#         for j in col_names:
+#             if(flag<3):
+#                 flag=flag+1
+#                 continue
+#             if(j=='waterlevel'):
+#                 continue
+#             cursor.execute("select count(distinct "+str(j)+") from "+stationName+" where year(date)="+str(k))
+#             data1 = cursor.fetchall()
+#             for row1 in data1:
+#                 if(row1[0]!=0):
+#                     parameterCount+=1
+#                 break
+#         flag=0;
+#         print "parameterCount"
+#         print parameterCount
+#         for i in col_names:
+#             if(flag<3):
+#                 flag=flag+1
+#                 continue
+#             if(i=='waterlevel'):
+#                 continue
+#             parameter.append(i)
+#
+#             cursor.execute("select "+i+" from "+stationName+" where year(date)="+k)
+#             data = cursor.fetchall()
+#             goodCount=0;
+#             totalCount=0;
+#             sum =0;
+#             for row in data:
+#                 if row[0] == None:
+#                     continue
+#                 count,deviation=checkSensorRange(i,row[0])
+#                 goodCount += count
+#                 totalCount=totalCount+1
+#                 sum += deviation
+#             if(totalCount==0):
+#                 countPercent=0
+#                 avgDeviation=0
+#             else:
+#                 countPercent = (goodCount*100)/totalCount
+#                 avgDeviation = sum/totalCount
+#             countSum += countPercent
+#             spiderdata.append({ "axis" :i, "value" : countPercent} )
+#             indexshort.append(countPercent)
+#         if parameterCount!=0:
+#             countAvg = countSum/parameterCount
+#         else:
+#             countAvg=0
+#         qualityIndex.append({"year":k, "index":countAvg})
+#         spiderdataTotal.append(spiderdata)
+#         indexFull.append({"name":k,"data":indexshort,"pointPlacement":'on'})
+#     return spiderdataTotal,yearlist,qualityIndex,indexFull,parameter
+#
+#
+# def checkSensorRange(parameter,value):
+#     deviation=0
+#     count=0
+#     if(parameter=='do'):
+#         if value < 70:
+#             deviation = abs(value-70)
+#         else:
+#             count += 1
+#             deviation=0
+#     elif(parameter =='ph'):
+#         if value < 6.5:
+#             deviation = 6.5-value
+#         elif value > 8.5:
+#             deviation = value-8.5
+#         else:
+#             count += 1
+#             deviation=0
+#     elif(parameter=='salinity'):
+#         if value > 30:
+#             deviation = value-30
+#         else:
+#             count += 1
+#             deviation=0
+#     elif(parameter=='turbidity'):
+#         if value > 50:
+#             deviation = value-50
+#         else:
+#             count += 1
+#             deviation=0
+#     elif(parameter=='chlorophyll'):
+#         if value > 3:
+#             deviation = value-3
+#         else:
+#             count += 1
+#             deviation=0
+#     elif(parameter=='temp'):
+#         if value < 55:
+#             deviation = 55-value
+#         elif value>90:
+#             deviation = value-90
+#         else:
+#             count += 1
+#             deviation=0
+#     else:
+#         print("no parameter")
+#         print value
+#     return(count, deviation)
 
 
 def calculateCCMEwqi():
@@ -315,46 +315,4 @@ def checkRange(value, parameter):
     return (0,0)
 
 def kmeans(request):
-    years=[2013,2015,2016]
-    stations=['chinacamp','gallinascreek','tiburon','carquinez','fortpoint','sfbaypier17a','sfbaysanmateobridge','sfbaydumbartonbridge']
-    db = connection
-    cursor = db.cursor()
-    for year in years:
-        for station in stations:
-            cursor.execute("select temp from "+station+" where year(date)="+str(year))
-            params = cursor.fetchall()
-            col_names = [i[0] for i in cursor.description]
-            idealOb =0;
-            c1=0;
-            llowOb = 0;
-            c2=0;
-            lhigOb = 0;
-            c3 =0;
-            hlowOb=0
-            c4=0
-            hhigOb =0
-            c5=0;
-            for param in params:
-                if param[0]> 55 and param[0]<90:
-                    idealOb += 1
-                    c1=64
-                elif param[0] < 55 and param[0]>41:
-                    llowOb += 1
-                    c2= 53
-                elif param[0] < 41 :
-                    lhigOb += 1
-                    c3= 31
-                else:
-                    hhigOb += 1
-                    c5 = 121
-            if idealOb!=0:
-                print station,idealOb,year,c1,col_names[0],'low'
-            if llowOb!=0:
-                print station,llowOb,year,c2,col_names[0],'medium'
-            if lhigOb!=0:
-                print station,lhigOb,year,c3,col_names[0],'high'
-            if hlowOb!=0:
-                print station,hlowOb,year,c4,col_names[0],'medium'
-            if hhigOb!=0:
-                print station,hhigOb,year,c5,col_names[0],'high'
-
+    return render(request, 'kmeans.html', {})

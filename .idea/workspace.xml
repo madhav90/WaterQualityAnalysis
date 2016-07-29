@@ -1,10 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a194e967-603f-49fe-9dea-fbac0edf28ed" name="Default" comment="">
+    <list default="true" id="a194e967-603f-49fe-9dea-fbac0edf28ed" name="Default" comment="Minor Changes">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/static/bubble_chart.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/static/bubble_chart.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/static/kmeans.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/static/reset.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/static/tooltip.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/kmeans.html" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/home.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/madhav/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/madhav/scripts/carquinezchlorophyll.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/madhav/scripts/carquinezdo.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/madhav/scripts/carquinezph.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/madhav/scripts/carquinezsalinity.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/madhav/scripts/carquineztemp.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/madhav/scripts/carquinezturbidity.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/madhav/scripts/chinacampdo.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/madhav/scripts/chinacampph.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/madhav/scripts/chinacampsalinity.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/madhav/scripts/chinacamptemp.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/madhav/scripts/chinacampturbidity.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/madhav/scripts/chinacampwaterlevel.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/madhav/scripts/downloader.sh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/madhav/scripts/fortpointchlorophyll.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/madhav/scripts/fortpointsalinity.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/madhav/scripts/fortpointtemp.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/madhav/scripts/gallinascreekdo.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/madhav/scripts/gallinascreekph.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/madhav/scripts/gallinascreeksalinity.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/madhav/scripts/gallinascreektemp.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/madhav/scripts/gallinascreekturbidity.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/madhav/scripts/gallinascreekwaterlevel.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/madhav/scripts/sfbaydumbartonbridgedo.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/madhav/scripts/sfbaydumbartonbridgetemp.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/madhav/scripts/sfbaypier17ado.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/madhav/scripts/sfbaypier17asalinity.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/madhav/scripts/sfbaypier17atemp.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/madhav/scripts/sfbaysanmateobridgedo.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/madhav/scripts/sfbaysanmateobridgetemp.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/madhav/scripts/sqluploader.sh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/madhav/scripts/tiburonchlorophyll.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/madhav/scripts/tiburondo.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/madhav/scripts/tiburonph.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/madhav/scripts/tiburonsalinity.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/madhav/scripts/tiburontemp.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/madhav/scripts/tiburonturbidity.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/carquinezchlorophyll.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/carquinezdo.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/carquinezph.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/carquinezsalinity.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/carquineztemp.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/carquinezturbidity.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/chinacampdo.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/chinacampph.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/chinacampsalinity.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/chinacamptemp.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/chinacampturbidity.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/chinacampwaterlevel.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/fortpointchlorophyll.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/fortpointsalinity.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/fortpointtemp.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/gallinascreekdo.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/gallinascreekph.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/gallinascreeksalinity.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/gallinascreektemp.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/gallinascreekturbidity.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/gallinascreekwaterlevel.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/sfbaydumbartonbridgedo.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/sfbaydumbartonbridgetemp.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/sfbaypier17ado.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/sfbaypier17asalinity.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/sfbaypier17atemp.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/sfbaysanmateobridgedo.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/sfbaysanmateobridgetemp.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/tiburonchlorophyll.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/tiburondo.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/tiburonph.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/tiburonsalinity.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/tiburontemp.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/tiburonturbidity.csv" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/madhav/index.html" afterPath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/qualitytrends.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/WaterQualityAnalysis.iml" afterPath="$PROJECT_DIR$/.idea/WaterQualityAnalysis.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/static/chart.js" afterPath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/static/chart.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/madhav/index.html" afterPath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/madhav/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/cluster.html" afterPath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/cluster.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/index.html" afterPath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/urls.py" afterPath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/views.py" afterPath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/mysite/settings.py" afterPath="$PROJECT_DIR$/WaterQualityAnalysis/mysite/settings.py" />
     </list>
     <ignored path="WaterQualityAnalysis.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,7 +112,93 @@
     <favorites_list name="WaterQualityAnalysis" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf>
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WaterQualityAnalysis/mysite/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-106">
+              <caret line="71" column="6" selection-start-line="71" selection-start-column="6" selection-end-line="71" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WaterQualityAnalysis/analysis/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="29" column="31" selection-start-line="29" selection-start-column="31" selection-end-line="29" selection-end-column="31" />
+              <folding>
+                <element signature="e#0#31#0" expanded="true" />
+                <marker date="1469793892000" expanded="true" signature="499:568" ph="SELECT id,st... stationlist" />
+                <marker date="1469793892000" expanded="true" signature="1676:1702" ph="select id fr... stationlist" />
+                <marker date="1469793892000" expanded="true" signature="7036:7074" ph="SELECT disti... usgsdata" />
+                <marker date="1469793892000" expanded="true" signature="7169:7224" ph="select * fro... usgsdata" />
+                <marker date="1469793892000" expanded="true" signature="7343:7401" ph="select latit... usgs_station" />
+                <marker date="1469793892000" expanded="true" signature="7778:7833" ph="select disti... " />
+                <marker date="1469793892000" expanded="true" signature="7963:8030" ph="select * fro... usgsdata" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WaterQualityAnalysis/analysis/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" column="58" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="58" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2175">
+              <caret line="145" column="86" selection-start-line="145" selection-start-column="86" selection-end-line="145" selection-end-column="86" />
+              <folding>
+                <element signature="n#style#0;n#video#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cluster.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/cluster.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="262">
+              <caret line="333" column="0" selection-start-line="333" selection-start-column="0" selection-end-line="333" selection-end-column="0" />
+              <folding>
+                <marker date="1469794273000" expanded="true" signature="7750:7761" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="kmeans.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/kmeans.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="274">
+              <caret line="44" column="13" selection-start-line="44" selection-start-column="13" selection-end-line="44" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="qualitytrends.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/qualitytrends.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="87" column="56" selection-start-line="87" selection-start-column="34" selection-end-line="87" selection-end-column="56" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
@@ -44,23 +217,52 @@
         <option value="$PROJECT_DIR$/WaterQualityAnalysis/mysite/mysite/settings.py" />
         <option value="$PROJECT_DIR$/WaterQualityAnalysis/mysite/example/views.py" />
         <option value="$PROJECT_DIR$/WaterQualityAnalysis/mysite/example/templates/example/index.html" />
-        <option value="$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/index.html" />
-        <option value="$PROJECT_DIR$/WaterQualityAnalysis/mysite/settings.py" />
         <option value="$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/madhav/index.html" />
         <option value="$PROJECT_DIR$/WaterQualityAnalysis/analysis/static/chart.js" />
+        <option value="$PROJECT_DIR$/WaterQualityAnalysis/mysite/settings.py" />
+        <option value="$PROJECT_DIR$/WaterQualityAnalysis/mysite/urls.py" />
+        <option value="$PROJECT_DIR$/WaterQualityAnalysis/analysis/urls.py" />
+        <option value="$PROJECT_DIR$/WaterQualityAnalysis/analysis/static/bubble_chart.css" />
+        <option value="$PROJECT_DIR$/WaterQualityAnalysis/analysis/static/bubble_chart.js" />
+        <option value="$PROJECT_DIR$/WaterQualityAnalysis/analysis/views.py" />
+        <option value="$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/qualityTrends.html" />
+        <option value="$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/kmeans.html" />
+        <option value="$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/cluster.html" />
+        <option value="$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/qualitytrends.html" />
+        <option value="$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/index.html" />
       </list>
     </option>
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" />
-  <component name="JsBuildToolPackageJson" detection-done="true" />
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="457" />
-    <option name="y" value="108" />
+    <option name="x" value="68" />
+    <option name="y" value="24" />
     <option name="width" value="1280" />
     <option name="height" value="734" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>Python</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>PyCompatibilityInspection</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -87,7 +289,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -121,144 +322,9 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WaterQualityAnalysis" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WaterQualityAnalysis" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WaterQualityAnalysis" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mysite" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WaterQualityAnalysis" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WaterQualityAnalysis" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WaterQualityAnalysis" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="analysis" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WaterQualityAnalysis" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WaterQualityAnalysis" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WaterQualityAnalysis" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="analysis" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WaterQualityAnalysis" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WaterQualityAnalysis" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WaterQualityAnalysis" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="analysis" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="madhav" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WaterQualityAnalysis" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WaterQualityAnalysis" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WaterQualityAnalysis" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="analysis" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="madhav" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WaterQualityAnalysis" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WaterQualityAnalysis" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WaterQualityAnalysis" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="analysis" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -271,7 +337,12 @@
     <property name="ChangesBrowser.SHOW_FLATTEN" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/WaterQualityAnalysis/analysis/static" />
+      <recent name="$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates" />
       <recent name="$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/madhav" />
     </key>
   </component>
@@ -571,28 +642,28 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="457" y="108" width="1280" height="734" extended-state="0" />
+    <frame x="68" y="24" width="1280" height="734" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18203124" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18497577" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32882884" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32859176" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32932332" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3271028" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32866043" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33021808" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32866043" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32882884" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -631,28 +702,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="585">
           <caret line="39" column="28" selection-start-line="39" selection-start-column="22" selection-end-line="39" selection-end-column="28" />
-          <folding />
+          <folding>
+            <element signature="n#style#0;n#video#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/madhav/test.txt" />
     <entry file="file://$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/madhav/css/style.css" />
-    <entry file="file://$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/madhav/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
-          <caret line="8" column="51" selection-start-line="8" selection-start-column="49" selection-end-line="8" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/WaterQualityAnalysis/analysis/static/chart.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -661,10 +718,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WaterQualityAnalysis/mysite/settings.py">
+    <entry file="file://$PROJECT_DIR$/WaterQualityAnalysis/mysite/wsgi.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -679,11 +736,150 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/WaterQualityAnalysis/mysite/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WaterQualityAnalysis/mysite/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WaterQualityAnalysis/analysis/station.geojson">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/spider.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1469786025000" expanded="true" signature="1424:1444" ph="..." />
+            <marker date="1469786025000" expanded="true" signature="2423:2443" ph="..." />
+            <marker date="1469786025000" expanded="true" signature="3318:3338" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WaterQualityAnalysis/mysite/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-106">
+          <caret line="71" column="6" selection-start-line="71" selection-start-column="6" selection-end-line="71" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-645">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/ccmeAnalysis.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1256">
+          <caret line="21" column="6" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WaterQualityAnalysis/analysis/static/reset.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WaterQualityAnalysis/analysis/static/bubble_chart.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="33" column="15" selection-start-line="33" selection-start-column="15" selection-end-line="33" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WaterQualityAnalysis/analysis/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="58" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="58" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WaterQualityAnalysis/analysis/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="29" column="31" selection-start-line="29" selection-start-column="31" selection-end-line="29" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+            <marker date="1469793892000" expanded="true" signature="499:568" ph="SELECT id,st... stationlist" />
+            <marker date="1469793892000" expanded="true" signature="1676:1702" ph="select id fr... stationlist" />
+            <marker date="1469793892000" expanded="true" signature="7036:7074" ph="SELECT disti... usgsdata" />
+            <marker date="1469793892000" expanded="true" signature="7169:7224" ph="select * fro... usgsdata" />
+            <marker date="1469793892000" expanded="true" signature="7343:7401" ph="select latit... usgs_station" />
+            <marker date="1469793892000" expanded="true" signature="7778:7833" ph="select disti... " />
+            <marker date="1469793892000" expanded="true" signature="7963:8030" ph="select * fro... usgsdata" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WaterQualityAnalysis/analysis/static/bubble_chart.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5279">
+          <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/cluster.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="333" column="0" selection-start-line="333" selection-start-column="0" selection-end-line="333" selection-end-column="0" />
+          <folding>
+            <marker date="1469794273000" expanded="true" signature="7750:7761" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/qualitytrends.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="87" column="56" selection-start-line="87" selection-start-column="34" selection-end-line="87" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/kmeans.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="44" column="13" selection-start-line="44" selection-start-column="13" selection-end-line="44" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="46" column="26" selection-start-line="46" selection-start-column="26" selection-end-line="46" selection-end-column="26" />
-          <folding />
+        <state relative-caret-position="2175">
+          <caret line="145" column="86" selection-start-line="145" selection-start-column="86" selection-end-line="145" selection-end-column="86" />
+          <folding>
+            <element signature="n#style#0;n#video#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -1,27 +1,31 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href='static/style.css'>
     <script src="/static/sankey.js"></script>
-    <title>Water project</title>
+    <title>Big Data Based Water Quality Evaluation for San Francisco Bay</title>
 
 </head>
 
 <body>
-
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">San Francisco Water Quality</a>
+            <p class="navbar-brand">San Francisco Bay Water Quality Analysis</p>
         </div>
         <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="">Home</a></li>
+            <li class="active"><a href="/">Home</a></li>
             <li><a href="qualityTrends">Data Portal</a></li>
-            <li><a href="analysis">Water Quality Analysis</a></li>
-            <li><a href="spider">Parameter Analysis</a></li>
+            <li><a href="analysis">Analysis</a></li>
+             <li><a href="kmeans">k-Means Classification</a></li>
         </ul>
     </div>
 </nav>
@@ -70,7 +74,7 @@
             <br><br><br><br>
             <h1 align="center" >SAVE THE SEA </h1><br>
             <h2 align="center" style="color:grey">Aquatic Life is in Danger</h2>
-            <h2 align="center" style="color:grey">Be a part of Solution, not Pollution!!</h2>
+            <h2 align="center" style="color:grey">Be a part of the Solution, not Pollution!!</h2>
 
         </div>
         <div class="col-sm-4">
@@ -137,18 +141,18 @@
 
         <div class="col-sm-4">
             <div class="panel panel-default">
-                <div class="panel-heading"><h4 align="center">Parameter Analysis</h4></div>
+                <div class="panel-heading"><h4 align="center">k-Means Classification</h4></div>
              <div class="panel-body">
-            <p>It Consolidates the water quality parameters yearly and shows a comparison between different station on SF Bay using Spider/Radar diagram</p>
-            <p><a href="#">View More</a></p></div>
+            <p>It shows the k-means classification of 3 years data on all the stations</p>
+            <p><a href="kmeans">View More</a></p></div>
             </div>
             </div>
     </div>
 
     <footer>
         <hr><br><br>
-        <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2016 SJSU &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+        <p class="pull-right"> <a onclick="$('html, body').animate({scrollTop: 0}, 900);" href="javascript:;">Back to top</a></p>
+        <p>&copy; 2016 &middot; All Rights Reserved &middot; <a href="http://www.sjsu.edu/">San Jose State University</a> </p>
 
     </footer>
 </div>
