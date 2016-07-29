@@ -1,59 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a194e967-603f-49fe-9dea-fbac0edf28ed" name="Default" comment="K Means Page+Minor Changes">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Procfile" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/requirements.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/runtime.txt" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/.idea/WaterQualityAnalysis.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/.idea/encodings.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/.idea/misc.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/.idea/modules.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/.idea/vcs.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/.idea/workspace.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/downloader.sh" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/mergeTable" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/putData.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/sqluploader.sh" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/waterQuality.sql" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/__init__.py" afterPath="$PROJECT_DIR$/mysite/__init__.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/migrations/__init__.py" afterPath="$PROJECT_DIR$/analysis/migrations/__init__.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/static/Script1.js" afterPath="$PROJECT_DIR$/analysis/static/Script1.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/static/ajax.js" afterPath="$PROJECT_DIR$/analysis/static/ajax.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/static/bubble_chart.css" afterPath="$PROJECT_DIR$/analysis/static/bubble_chart.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/static/bubble_chart.js" afterPath="$PROJECT_DIR$/analysis/static/bubble_chart.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/static/chart.js" afterPath="$PROJECT_DIR$/analysis/static/chart.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/static/kmeans.csv" afterPath="$PROJECT_DIR$/analysis/static/kmeans.csv" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/static/map.js" afterPath="$PROJECT_DIR$/analysis/static/map.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/static/map2.js" afterPath="$PROJECT_DIR$/analysis/static/map2.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/static/media/7.mp4" afterPath="$PROJECT_DIR$/analysis/static/media/7.mp4" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/static/media/c1.jpg" afterPath="$PROJECT_DIR$/analysis/static/media/c1.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/static/media/c2.jpg" afterPath="$PROJECT_DIR$/analysis/static/media/c2.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/static/media/fish.jpg" afterPath="$PROJECT_DIR$/analysis/static/media/fish.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/static/media/fish.png" afterPath="$PROJECT_DIR$/analysis/static/media/fish.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/static/media/seal.jpg" afterPath="$PROJECT_DIR$/analysis/static/media/seal.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/static/media/slogan.png" afterPath="$PROJECT_DIR$/analysis/static/media/slogan.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/static/reset.css" afterPath="$PROJECT_DIR$/analysis/static/reset.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/static/sankey.js" afterPath="$PROJECT_DIR$/analysis/static/sankey.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/static/style.css" afterPath="$PROJECT_DIR$/analysis/static/style.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/static/tooltip.js" afterPath="$PROJECT_DIR$/analysis/static/tooltip.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/station.geojson" afterPath="$PROJECT_DIR$/analysis/station.geojson" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/ccmeAnalysis.html" afterPath="$PROJECT_DIR$/analysis/templates/ccmeAnalysis.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/cluster.html" afterPath="$PROJECT_DIR$/analysis/templates/cluster.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/index.html" afterPath="$PROJECT_DIR$/analysis/templates/index.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/kmeans.html" afterPath="$PROJECT_DIR$/analysis/templates/kmeans.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/qualitytrends.html" afterPath="$PROJECT_DIR$/analysis/templates/qualitytrends.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/spider.html" afterPath="$PROJECT_DIR$/analysis/templates/spider.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/urls.py" afterPath="$PROJECT_DIR$/analysis/urls.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/analysis/views.py" afterPath="$PROJECT_DIR$/analysis/views.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/manage.py" afterPath="$PROJECT_DIR$/manage.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/mysite/__init__.py" afterPath="$PROJECT_DIR$/analysis/__init__.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/mysite/settings.py" afterPath="$PROJECT_DIR$/mysite/settings.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/mysite/urls.py" afterPath="$PROJECT_DIR$/mysite/urls.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/WaterQualityAnalysis/mysite/wsgi.py" afterPath="$PROJECT_DIR$/mysite/wsgi.py" />
+    <list default="true" id="a194e967-603f-49fe-9dea-fbac0edf28ed" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/requirements.txt" afterPath="$PROJECT_DIR$/requirements.txt" />
     </list>
     <ignored path="WaterQualityAnalysis.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -74,7 +24,18 @@
     <favorites_list name="WaterQualityAnalysis" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="requirements.txt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/requirements.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
@@ -106,6 +67,7 @@
         <option value="$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/cluster.html" />
         <option value="$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/qualitytrends.html" />
         <option value="$PROJECT_DIR$/WaterQualityAnalysis/analysis/templates/index.html" />
+        <option value="$PROJECT_DIR$/requirements.txt" />
       </list>
     </option>
   </component>
@@ -509,7 +471,14 @@
       <option name="project" value="LOCAL" />
       <updated>1469794798474</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Deployment Files">
+      <created>1469798724592</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1469798724592</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -544,7 +513,8 @@
     <MESSAGE value="Test Message" />
     <MESSAGE value="Spider Diagram" />
     <MESSAGE value="Minor Changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Minor Changes" />
+    <MESSAGE value="Deployment Files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Deployment Files" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -628,6 +598,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding>
+            <element signature="e#22#31#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -650,6 +623,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="27" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -664,6 +638,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding>
+            <element signature="e#22#31#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -708,6 +685,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1256">
           <caret line="21" column="6" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -715,6 +693,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -749,6 +728,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-5279">
           <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -804,6 +784,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="87" column="22" selection-start-line="87" selection-start-column="22" selection-end-line="87" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding />
         </state>
       </provider>
