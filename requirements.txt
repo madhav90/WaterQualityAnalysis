@@ -24,7 +24,6 @@ requests==2.10.0
 semantic-version==2.5.0
 six==1.10.0
 texttable==0.8.4
-vboxapi==1.0
 wcwidth==0.1.7
 websocket-client==0.37.0
 whitenoise==3.2
